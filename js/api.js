@@ -1,23 +1,21 @@
-const fs = require('fs');
-const path = require('path');
-const https = require('https');
+let fs, path, https, dbFile;
 
-// A reliable way to get to the root of the app in both dev (where __dirname is ./js)
-// and packed production (where relative paths get tricky)
-let appRoot = path.join(__dirname, '..');
+// Check if running in Electron/Node environment
+if (typeof require !== 'undefined') {
+    fs = require('fs');
+    path = require('path');
+    https = require('https');
 
-// Electron sometimes puts the app in resources/app
-if (!fs.existsSync(path.join(appRoot, 'data', 'db.json'))) {
-    appRoot = path.join(process.resourcesPath, 'app');
+    let appRoot = path.join(__dirname, '..');
+    if (!fs.existsSync(path.join(appRoot, 'data', 'db.json'))) {
+        appRoot = path.join(process.resourcesPath, 'app');
+    }
+    if (!fs.existsSync(path.join(appRoot, 'data', 'db.json'))) {
+        appRoot = process.cwd();
+    }
+    const dataDir = path.join(appRoot, 'data');
+    dbFile = path.join(dataDir, 'db.json');
 }
-
-// Fallback just in case
-if (!fs.existsSync(path.join(appRoot, 'data', 'db.json'))) {
-    appRoot = process.cwd(); // Run from current working directory
-}
-
-const dataDir = path.join(appRoot, 'data');
-const dbFile = path.join(dataDir, 'db.json');
 
 
 const ApiService = {
@@ -50,10 +48,26 @@ const ApiService = {
         return allResults;
     },
 
-    getLocalDatabase() {
-        if (fs.existsSync(dbFile)) {
+    async getLocalDatabase() {
+        // If we are in a web browser (GitHub Pages doesn't have require)
+        if (typeof window !== 'undefined' && typeof window.require === 'undefined') {
             try {
-                const data = fs.readFileSync(dbFile, 'utf8');
+                // Fetch relative to current path on GitHub Pages
+                const res = await fetch('data/db.json');
+                return await res.json();
+            } catch (e) {
+                console.error("Fetch DB error:", e);
+                return null;
+            }
+        }
+
+        // Otherwise we are in Electron / Node
+        const fs = require('fs');
+        const dbPath = typeof window !== 'undefined' && window.process ? dbFile : 'data/db.json';
+
+        if (fs.existsSync(dbPath)) {
+            try {
+                const data = fs.readFileSync(dbPath, 'utf8');
                 return JSON.parse(data);
             } catch (e) {
                 console.error("Error parsing local DB:", e);
@@ -64,6 +78,13 @@ const ApiService = {
     },
 
     _fetchJson(url) {
+        // Browser compatible fetch
+        if (typeof window !== 'undefined' && typeof window.require === 'undefined') {
+            return fetch(url).then(r => r.json());
+        }
+
+        // Node / Electron compatible https
+        const https = require('https');
         return new Promise((resolve, reject) => {
             https.get(url, (res) => {
                 let data = '';
