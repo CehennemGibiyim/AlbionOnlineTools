@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Oswald:wght@400;500;600&family=Inter:wght@400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Typography Helpers */
+.silver {
+    color: #a5a5a5;
+    font-weight: bold;
+}
+
+/* 1. Header */
+.main-header {
+    background-color: var(--bg-header);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.brand-title {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.brand-title h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    color: var(--accent-gold);
+    text-transform: uppercase;
+}
+
+.logo-icon {
+    font-size: 24px;
+}
+
+/* Theme Dots */
+.theme-dots {
+    display: flex;
+    gap: 8px;
+}
+
+.theme-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #555;
+    transition: transform 0.2s;
+}
+
+.theme-dot:hover {
+    transform: scale(1.2);
+}
+
+.theme-dot.selected {
+    border-color: #fff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+/* 2. Filter Bar */
+.filter-bar {
+    background-color: var(--bg-panel);
+    height: 55px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    gap: 20px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+input,
+select,
+button {
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-light);
+    color: var(--text-main);
+    padding: 6px 12px;
+    font-size: 13px;
+    outline: none;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    padding: 0 8px;
+    width: 200px;
+}
+
+.search-box input {
+    border: none;
+    background: transparent;
+    width: 100%;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.filter-group .label {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.toggle-group {
+    display: flex;
+}
+
+.toggle-group button {
+    border-right: none;
+    cursor: pointer;
+}
+
+.toggle-group button:last-child {
+    border-right: 1px solid var(--border-light);
+}
+
+.toggle-group button.active {
+    background-color: var(--accent-blue);
+    color: #fff;
+    border-color: var(--accent-blue);
+}
+
+.btn-fetch {
+    background-color: var(--accent-blue-light);
+    color: #000;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-left: auto;
+    /* Push to right */
+    cursor: pointer;
+    padding: 8px 20px;
+    transition: background 0.2s;
+}
+
+.btn-fetch:hover {
+    background-color: #64a6f2;
+}
+
+/* 3. App Body Layout */
+.app-body {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+}
+
+/* Left Sidebar */
+.left-sidebar {
+    width: 250px;
+    background-color: var(--bg-panel);
+    border-right: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.sidebar-section {
+    padding: 15px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.section-title {
+    color: var(--accent-gold);
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: var(--accent-gold);
+    text-underline-offset: 4px;
+}
+
+.sub-title {
+    font-size: 12px;
+    color: var(--accent-gold);
+    background-color: var(--bg-header);
+    padding: 4px 8px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.setting-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.setting-row input[type="number"] {
+    width: 60px;
+    text-align: right;
+    padding: 4px;
+}
+
+.city-list label {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    margin-bottom: 6px;
+    cursor: pointer;
+}
+
+.city-list input {
+    margin-right: 6px;
+}
+
+.categories ul {
+    list-style: none;
+}
+
+.categories li {
+    font-size: 13px;
+    padding: 6px 10px;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    transition: background 0.1s;
+}
+
+.categories li:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.categories li.active {
+    background-color: rgba(255, 184, 77, 0.1);
+    border-left-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+/* 4. Table Area */
+.table-container {
+    flex: 1;
+    background-color: var(--bg-main);
+    overflow: auto;
+}
+
+.craft-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    /* Good for numbers */
+}
+
+.craft-table th {
+    background-color: var(--bg-panel);
+    color: var(--text-muted);
+    font-weight: 500;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.craft-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid var(--border-light);
+    vertical-align: middle;
+}
+
+.craft-table tr:hover td {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+/* Item Row Specifics */
+.item-category-header {
+    background-color: rgba(255, 184, 77, 0.05);
+    color: var(--accent-gold);
+    font-weight: 600;
+}
+
+.item-tier {
+    color: var(--accent-blue);
+    font-weight: bold;
+}
+
+.profit-pos {
+    color: var(--text-green);
+}
+
+.profit-neg {
+    color: var(--text-red);
+}
+
+.item-input {
+    width: 80px;
+    background-color: var(--bg-input-dark);
+    border: 1px solid #444;
+    color: var(--text-main);
+    text-align: right;
+    border-radius: 2px;
+    padding: 4px;
+}
+
+/* 5. Bottom Summary */
+.bottom-summary {
+    background-color: var(--bg-panel);
+    height: 60px;
+    border-top: 1px solid var(--border-light);
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 20px;
+    gap: 40px;
+    align-items: center;
+}
+
+.summary-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-box .label {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.summary-box .val {
+    font-size: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+.summary-box.highlight .val {
+    color: var(--accent-gold);
+}

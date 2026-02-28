@@ -1,0 +1,127 @@
+/* themes.css for the new dashboard layout */
+
+:root {
+    /* We'll use this default theme based on the screenshot provided */
+    --bg-main: #0d1117;
+    --bg-header: #161b22;
+    --bg-panel: #161b22;
+    --bg-input: #0d1117;
+    --bg-input-dark: #000000;
+
+    --text-main: #c9d1d9;
+    --text-muted: #8b949e;
+    --text-green: #3fb950;
+    --text-red: #f85149;
+
+    --accent-gold: #e3b341;
+    --accent-blue: #58a6ff;
+    --accent-blue-light: #79c0ff;
+
+    --border-light: #30363d;
+    --border-color: #21262d;
+}
+
+/* Theme 1: Default Dark (from Screenshot) */
+[data-theme="default"] {
+    --bg-main: #101318;
+    --bg-header: #1b2028;
+    --bg-panel: #161a20;
+    --bg-input: #101318;
+    --bg-input-dark: #07090b;
+
+    --text-main: #e2e8f0;
+    --text-muted: #94a3b8;
+    --text-green: #22c55e;
+    --text-red: #ef4444;
+
+    --accent-gold: #f59e0b;
+    --accent-blue: #3b82f6;
+    --accent-blue-light: #60a5fa;
+
+    --border-light: #334155;
+    --border-color: #1e293b;
+}
+
+/* Theme 2: Deep Blue */
+[data-theme="blue"] {
+    --bg-main: #0a192f;
+    --bg-header: #112240;
+    --bg-panel: #112240;
+    --bg-input: #0a192f;
+    --bg-input-dark: #020c1b;
+
+    --text-main: #ccd6f6;
+    --text-muted: #8892b0;
+    --text-green: #64ffda;
+    --text-red: #ff6b6b;
+
+    --accent-gold: #ffd700;
+    --accent-blue: #64ffda;
+    --accent-blue-light: #a8b2d1;
+
+    --border-light: #233554;
+    --border-color: #112240;
+}
+
+/* Theme 3: Cyber Green */
+[data-theme="green"] {
+    --bg-main: #050505;
+    --bg-header: #111111;
+    --bg-panel: #0a0a0a;
+    --bg-input: #000000;
+    --bg-input-dark: #000000;
+
+    --text-main: #00ff00;
+    --text-muted: #008800;
+    --text-green: #00ff00;
+    --text-red: #ff0000;
+
+    --accent-gold: #00ff00;
+    --accent-blue: #00ff00;
+    --accent-blue-light: #00ff00;
+
+    --border-light: #003300;
+    --border-color: #002200;
+}
+
+/* Theme 4: Dracula Purple */
+[data-theme="purple"] {
+    --bg-main: #282a36;
+    --bg-header: #44475a;
+    --bg-panel: #282a36;
+    --bg-input: #1e1f29;
+    --bg-input-dark: #191a21;
+
+    --text-main: #f8f8f2;
+    --text-muted: #6272a4;
+    --text-green: #50fa7b;
+    --text-red: #ff5555;
+
+    --accent-gold: #f1fa8c;
+    --accent-blue: #bd93f9;
+    --accent-blue-light: #ff79c6;
+
+    --border-light: #44475a;
+    --border-color: #6272a4;
+}
+
+/* Theme 5: Light Mode */
+[data-theme="light"] {
+    --bg-main: #f0f2f5;
+    --bg-header: #ffffff;
+    --bg-panel: #ffffff;
+    --bg-input: #ffffff;
+    --bg-input-dark: #e2e8f0;
+
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --text-green: #16a34a;
+    --text-red: #dc2626;
+
+    --accent-gold: #d97706;
+    --accent-blue: #2563eb;
+    --accent-blue-light: #3b82f6;
+
+    --border-light: #e2e8f0;
+    --border-color: #cbd5e1;
+}
