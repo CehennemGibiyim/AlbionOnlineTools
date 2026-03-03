@@ -1,0 +1,9 @@
+  ÔÇó electron-builder  version=26.8.1 os=10.0.26300
+  Ô¿» ENOENT: no such file or directory, open 'C:\Users\cehen\Downloads\AlbionTools\.publish=never'  failedTask=build stackTrace=Error: ENOENT: no such file or directory, open 'C:\Users\cehen\Downloads\AlbionTools\.publish=never'
+    at open (node:internal/fs/promises:637:25)
+    at Object.readFile (node:internal/fs/promises:1269:14)
+    at readConfig (C:\Users\cehen\Downloads\AlbionTools\node_modules\app-builder-lib\src\util\config\load.ts:19:16)
+    at getConfig (C:\Users\cehen\Downloads\AlbionTools\node_modules\app-builder-lib\src\util\config\config.ts:43:34)
+    at Packager.validateConfig (C:\Users\cehen\Downloads\AlbionTools\node_modules\app-builder-lib\src\packager.ts:376:27)
+    at Packager.build (C:\Users\cehen\Downloads\AlbionTools\node_modules\app-builder-lib\src\packager.ts:406:5)
+    at executeFinally (C:\Users\cehen\Downloads\AlbionTools\node_modules\builder-util\src\promise.ts:12:14)

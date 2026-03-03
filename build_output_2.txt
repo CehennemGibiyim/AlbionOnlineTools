@@ -1,0 +1,143 @@
+
+> albion-tools@1.0.0 build:win
+> electron-builder --win
+
+  ÔÇó electron-builder  version=26.8.1 os=10.0.26300
+  ÔÇó loaded configuration  file=package.json ("build" field)
+  ÔÇó packageManager not detected by file, falling back to environment detection  resolvedPackageManager=npm detected=C:\Users\cehen\Downloads\AlbionTools
+  ÔÇó executing @electron/rebuild  electronVersion=40.6.1 arch=x64 buildFromSource=false workspaceRoot=C:\Users\cehen\Downloads\AlbionTools projectDir=./ appDir=./
+  ÔÇó installing native dependencies  arch=x64
+  ÔÇó completed installing native dependencies
+  ÔÇó packaging       platform=win32 arch=x64 electron=40.6.1 appOutDir=dist\win-unpacked
+  ÔÇó searching for node modules  pm=npm searchDir=C:\Users\cehen\Downloads\AlbionTools
+(node:18452) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+  ÔÇó searching for node modules  pm=traversal searchDir=C:\Users\cehen\Downloads\AlbionTools
+  ÔÇó using manual traversal of node_modules to build dependency tree
+  ÔÇó no node modules returned while searching directories  searchDirectories=[""]
+  ÔÇó updating asar integrity executable resource  executablePath=dist\win-unpacked\albion-tools.exe
+  ÔÇó default Electron icon is used  reason=application icon is not set
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ÔÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=1.587s
+  Ô¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\730539355.7z
+    --
+    Path = C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\730539355.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\730539355\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\730539355\darwin\10.12\lib\libssl.dylib
+    
+                    command='C:\Users\cehen\Downloads\AlbionTools\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\730539355.7z' '-oC:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\730539355'
+                    workingDir=C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ÔÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=1.395s
+  Ô¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\716767711.7z
+    --
+    Path = C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\716767711.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\716767711\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\716767711\darwin\10.12\lib\libssl.dylib
+    
+                    command='C:\Users\cehen\Downloads\AlbionTools\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\716767711.7z' '-oC:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\716767711'
+                    workingDir=C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ÔÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=1.292s
+  Ô¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\368392267.7z
+    --
+    Path = C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\368392267.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\368392267\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\368392267\darwin\10.12\lib\libssl.dylib
+    
+                    command='C:\Users\cehen\Downloads\AlbionTools\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\368392267.7z' '-oC:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\368392267'
+                    workingDir=C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign
+  ÔÇó downloading     url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z size=5.6 MB parts=1
+  ÔÇó downloaded      url=https://github.com/electron-userland/electron-builder-binaries/releases/download/winCodeSign-2.6.0/winCodeSign-2.6.0.7z duration=1.374s
+  Ô¿» cannot execute  cause=exit status 2
+                    out=
+    7-Zip (a) 21.07 (x64) : Copyright (c) 1999-2021 Igor Pavlov : 2021-12-26
+    
+    Scanning the drive for archives:
+    1 file, 5635384 bytes (5504 KiB)
+    
+    Extracting archive: C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\706237099.7z
+    --
+    Path = C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\706237099.7z
+    Type = 7z
+    Physical Size = 5635384
+    Headers Size = 1492
+    Method = LZMA2:24m LZMA:20 BCJ2
+    Solid = +
+    Blocks = 2
+    
+    
+    Sub items Errors: 2
+    
+    Archives with Errors: 1
+    
+    Sub items Errors: 2
+    
+                    errorOut=ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\706237099\darwin\10.12\lib\libcrypto.dylib
+    ERROR: Cannot create symbolic link : Gereken ayrıcalık istemci tarafından sağlanmıyor. : C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\706237099\darwin\10.12\lib\libssl.dylib
+    
+                    command='C:\Users\cehen\Downloads\AlbionTools\node_modules\7zip-bin\win\x64\7za.exe' x -snld -bd 'C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\706237099.7z' '-oC:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign\706237099'
+                    workingDir=C:\Users\cehen\AppData\Local\electron-builder\Cache\winCodeSign

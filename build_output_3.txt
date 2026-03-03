@@ -1,0 +1,56 @@
+cli.js build
+
+Build
+
+Commands:
+  cli.js build                    Build                                [default]
+  cli.js install-app-deps         Install app deps
+  cli.js node-gyp-rebuild         Rebuild own native code
+  cli.js publish                  Publish a list of artifacts
+  cli.js create-self-signed-cert  Create self-signed code signing cert for
+                                  Windows apps
+  cli.js start                    Run application in a development mode using
+                                  electron-webpack
+
+Building:
+  -m, -o, --mac, --macos       Build for macOS, accepts target list (see
+                               https://www.electron.build/mac).          [array]
+  -l, --linux                  Build for Linux, accepts target list (see
+                               https://www.electron.build/linux)         [array]
+  -w, --win, --windows         Build for Windows, accepts target list (see
+                               https://www.electron.build/win)           [array]
+      --x64                    Build for x64                           [boolean]
+      --ia32                   Build for ia32                          [boolean]
+      --armv7l                 Build for armv7l                        [boolean]
+      --arm64                  Build for arm64                         [boolean]
+      --universal              Build for universal                     [boolean]
+      --dir                    Build unpacked dir. Useful to test.     [boolean]
+      --prepackaged, --pd      The path to prepackaged app (to pack in a
+                               distributable format)
+      --projectDir, --project  The path to project directory. Defaults to
+                               current working directory.
+  -c, --config                 The path to an electron-builder config. Defaults
+                               to `electron-builder.yml` (or `json`, or `json5`,
+                               or `js`, or `ts`), see
+                               https://www.electron.build/configuration
+
+Publishing:
+  -p, --publish  Publish artifacts, see https://www.electron.build/publish
+                [choices: "onTag", "onTagOrDraft", "always", "never", undefined]
+
+Other:
+      --help     Show help                                             [boolean]
+      --version  Show version number                                   [boolean]
+
+Examples:
+  electron-builder -mwl                     build for macOS, Windows and Linux
+  electron-builder --linux deb tar.xz       build deb and tar.xz for Linux
+  electron-builder --win --ia32             build for Windows ia32
+  electron-builder                          set package.json property `foo` to
+  -c.extraMetadata.foo=bar                  `bar`
+  electron-builder                          configure unicode options for NSIS
+  --config.nsis.unicode=false
+
+See https://electron.build for more documentation.
+
+Unknown argument: Line:
