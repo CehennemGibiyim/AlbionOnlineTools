@@ -30,12 +30,12 @@ const ITEMS = {
     SHADOWCALLER: 'T8_MAIN_CURSEDSTAFF_AVALON',
     LIFETOUCH: 'T8_MAIN_HOLYSTAFF_AVALON',
     DIVINE: 'T8_MAIN_HOLYSTAFF',
-    HALLOWFALL: 'T8_2H_HOLYSTAFF_HELL',
+    HALLOWFALL: 'T8_MAIN_HOLYSTAFF_AVALON',
     GREATARCANE: 'T8_2H_ARCANESTAFF',
     IRON_BREAKER: 'T8_MAIN_MACE',
-    CLARENT: 'T8_MAIN_SWORD_CRYSTAL',
+    CLARENT: 'T8_MAIN_SCIMITAR_MORGANA',
     LIGHT_CROSSBOW: 'T8_MAIN_CROSSBOW',
-    WEEPING: 'T8_2H_CROSSBOW_CRYSTAL',
+    WEEPING: 'T8_2H_CROSSBOW_HELL',
     BLAZING: 'T8_2H_FIRESTAFF_HELL',
     LIGHTCALLER: 'T8_MAIN_NATURESTAFF_AVALON',
     IRONROOT: 'T8_2H_NATURESTAFF_KEEPER',
@@ -49,21 +49,21 @@ const ITEMS = {
     WILDSTAFF: 'T8_2H_WILDSTAFF',
     INFERNAL_SCYTHE: 'T8_2H_SCYTHE_HELL',
     REALMBREAKER: 'T8_2H_AXE_HELL',
-    BEARCLAWS: 'T8_2H_DAGGER_HELL',
+    BEARCLAWS: 'T8_2H_DAGGER_KEEPER',
     DEATHGIVERS: 'T8_2H_DAGGERPAIR',
     WHISPERING: 'T8_2H_BOW_UNDEAD',
 
     // Off Hands
     SHIELD_ROYAL: 'T8_OFF_SHIELD_KEEPER',
-    MISTCALLER: 'T8_OFF_TOTEM_KEEPER',
+    MISTCALLER: 'T8_OFF_HORN_KEEPER',
     EYE_OF_SECRETS: 'T8_OFF_ORB_MORGANA',
-    LYMHURST_ORB: 'T8_OFF_BOOK',
+    LYMHURST_ORB: 'T8_OFF_CENSER_AVALON',
 
     // Helmets
-    HELMET_CLOTH_DW: 'T8_HEAD_CLOTH_SET3',
-    HELMET_PLATE_DW: 'T8_HEAD_PLATE_SET3',
-    HELMET_LEATHER_DW: 'T8_HEAD_LEATHER_SET3',
-    HOOD_GRAVEGUARD: 'T8_HEAD_PLATE_SET1',
+    HELMET_CLOTH_DW: 'T8_HEAD_CLOTH_ROYAL',
+    HELMET_PLATE_DW: 'T8_HEAD_PLATE_ROYAL',
+    HELMET_LEATHER_DW: 'T8_HEAD_LEATHER_ROYAL',
+    HOOD_GRAVEGUARD: 'T8_HEAD_PLATE_UNDEAD',
     COWL_CLOTH: 'T8_HEAD_CLOTH_SET1',
     HOOD_ASSASSIN: 'T8_HEAD_LEATHER_SET1',
     HUNTER_HOOD: 'T8_HEAD_LEATHER_SET2',
@@ -71,25 +71,25 @@ const ITEMS = {
     SOLDIER_HELMET: 'T8_HEAD_PLATE_SET2',
 
     // Armors
-    ROBE_OF_PROT: 'T8_ARMOR_CLOTH_SET3',
+    ROBE_OF_PROT: 'T8_ARMOR_CLOTH_ROYAL',
     KNIGHT_ARMOR: 'T8_ARMOR_PLATE_SET3',
     ASSASSIN_JACKET: 'T8_ARMOR_LEATHER_SET3',
-    REINFORCED_CHEST: 'T8_ARMOR_PLATE_SET1',
+    REINFORCED_CHEST: 'T8_ARMOR_PLATE_ROYAL',
     CLERIC_ROBE: 'T8_ARMOR_CLOTH_SET1',
-    ROYAL_JACKET: 'T8_ARMOR_LEATHER_SET1',
-    DRUID_ROBE: 'T8_ARMOR_CLOTH_SET2',
-    GUARD_ARMOR: 'T8_ARMOR_PLATE_SET2',
+    ROYAL_JACKET: 'T8_ARMOR_LEATHER_ROYAL',
+    DRUID_ROBE: 'T8_ARMOR_CLOTH_KEEPER',
+    GUARD_ARMOR: 'T8_ARMOR_PLATE_SET1',
     STALKER_JACKET: 'T8_ARMOR_LEATHER_SET2',
 
     // Boots
-    BOOTS_PLATE_DW: 'T8_SHOES_PLATE_SET3',
-    BOOTS_CLOTH_DW: 'T8_SHOES_CLOTH_SET3',
-    BOOTS_LEATHER_DW: 'T8_SHOES_LEATHER_SET3',
+    BOOTS_PLATE_DW: 'T8_SHOES_PLATE_ROYAL',
+    BOOTS_CLOTH_DW: 'T8_SHOES_CLOTH_ROYAL',
+    BOOTS_LEATHER_DW: 'T8_SHOES_LEATHER_ROYAL',
     SOLDIER_BOOTS: 'T8_SHOES_PLATE_SET2',
     SCHOLAR_SANDALS: 'T8_SHOES_CLOTH_SET2',
     HUNTER_SHOES: 'T8_SHOES_LEATHER_SET2',
     GUARDIAN_BOOTS: 'T8_SHOES_PLATE_SET1',
-    CULTIST_SANDALS: 'T8_SHOES_CLOTH_SET1',
+    CULTIST_SANDALS: 'T8_SHOES_CLOTH_MORGANA',
     ASSASSIN_SHOES: 'T8_SHOES_LEATHER_SET1',
 
     // Capes
@@ -97,9 +97,9 @@ const ITEMS = {
     MARTLOCK_CAPE: 'T8_CAPEITEM_FW_MARTLOCK',
     BRIDGEWATCH_CAPE: 'T8_CAPEITEM_FW_BRIDGEWATCH',
     THETFORD_CAPE: 'T8_CAPEITEM_FW_THETFORD',
-    BLANKET_CAPE: 'T8_CAPEITEM_AVALON',
+    BLANKET_CAPE: 'T8_CAPEITEM_DEMON',
     FORT_CAPE: 'T8_CAPEITEM_FW_FORTSTERLING',
-    CAERLEON_CAPE: 'T8_CAPEITEM_CAERLEON',
+    CAERLEON_CAPE: 'T8_CAPEITEM_FW_CAERLEON',
 
     // Food — verified Albion render API IDs
     PORK_OMELETTE: 'T7_MEAL_OMELETTE@1',
@@ -125,7 +125,7 @@ const BUILDS_DB = {
         description: 'Solo içerikler için yüksek hasar ve hayatta kalma dengesi. Mobil ve güçlü buildler önerilir.',
         roles: [
             {
-                role: 'DPS (Deathgivers)', difficulty: 'easy',
+                role: 'Hasar (Çifte Hançer)', difficulty: 'easy',
                 weapon: ITEMS.DEATHGIVERS, offhand: null, helmet: ITEMS.HOOD_ASSASSIN,
                 armor: ITEMS.ASSASSIN_JACKET, boots: ITEMS.ASSASSIN_SHOES,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.PORK_OMELETTE, potion: ITEMS.MAJOR_HEALING,
@@ -134,7 +134,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.DOUBLEBLADE, ITEMS.BEARCLAWS, ITEMS.WHISPERING]
             },
             {
-                role: 'DPS (Whispering Bow)', difficulty: 'easy',
+                role: 'Hasar (Fısıldayan Yay)', difficulty: 'easy',
                 weapon: ITEMS.WHISPERING, offhand: null, helmet: ITEMS.HUNTER_HOOD,
                 armor: ITEMS.STALKER_JACKET, boots: ITEMS.HUNTER_SHOES,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -143,7 +143,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.BOW_BADON, ITEMS.BOLTCASTER]
             },
             {
-                role: 'Self-Heal (Wildstaff)', difficulty: 'medium',
+                role: 'Şifacı (Vahşi Asa)', difficulty: 'medium',
                 weapon: ITEMS.WILDSTAFF, offhand: null, helmet: ITEMS.HUNTER_HOOD,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.HUNTER_SHOES,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.ROAST_PORK, potion: ITEMS.ENERGY_POTION,
@@ -165,7 +165,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.CLARENT, ITEMS.OATHKEEPERS]
             },
             {
-                role: 'Healer (Hallowfall)', difficulty: 'easy',
+                role: 'Şifacı (Kutsal Hazan)', difficulty: 'easy',
                 weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -173,15 +173,15 @@ const BUILDS_DB = {
                 swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE]
             },
             {
-                role: 'DPS (Shadowcaller)', difficulty: 'hard',
+                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
                 weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Cursed Sickle', 'Inner Fire', 'Desecrate', 'Hellfire Hands', 'Black Hands', 'E → Q×3 → W → R boss→'),
+                skills: SKILL('Cursed Sickle', 'Inner Fire', 'Desecrate', 'Hellfire Hands', 'Black Hands', 'E → Q×3 → W → R (Bossa)'),
                 swaps: [ITEMS.WEEPING, ITEMS.CARRIONCALLER]
             },
             {
-                role: 'DPS (Chillhowl)', difficulty: 'medium',
+                role: 'Hasar (Kırağı Asası)', difficulty: 'medium',
                 weapon: ITEMS.CHILLHOWL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -203,7 +203,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.CLARENT, ITEMS.OATHKEEPERS]
             },
             {
-                role: 'Off Tank', difficulty: 'medium',
+                role: 'İkincil Tank', difficulty: 'medium',
                 weapon: ITEMS.CLARENT, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.SOLDIER_HELMET,
                 armor: ITEMS.GUARD_ARMOR, boots: ITEMS.SOLDIER_BOOTS,
                 cape: ITEMS.FORT_CAPE, food: ITEMS.BREAD, potion: ITEMS.GIANT_STRENGTH,
@@ -211,7 +211,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.SPIRITHUNTER, ITEMS.REALMBREAKER]
             },
             {
-                role: 'Ana Healer', difficulty: 'easy',
+                role: 'Ana Şifacı', difficulty: 'easy',
                 weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -219,7 +219,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE]
             },
             {
-                role: 'Great Arcane', difficulty: 'medium',
+                role: 'Destek (Büyük Arkana)', difficulty: 'medium',
                 weapon: ITEMS.GREATARCANE, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.ROBE_OF_PROT, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.CAERLEON_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -227,7 +227,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.LIFETOUCH, ITEMS.MISTCALLER]
             },
             {
-                role: 'DPS (Shadowcaller)', difficulty: 'hard',
+                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
                 weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -235,7 +235,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.WEEPING, ITEMS.CARRIONCALLER]
             },
             {
-                role: 'DPS (Chillhowl)', difficulty: 'medium',
+                role: 'Hasar (Kırağı Asası)', difficulty: 'medium',
                 weapon: ITEMS.CHILLHOWL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -243,7 +243,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.WARCALLER, ITEMS.BLAZING]
             },
             {
-                role: 'DPS (Light Crossbow)', difficulty: 'easy',
+                role: 'Hasar (Hafif Arbalet)', difficulty: 'easy',
                 weapon: ITEMS.LIGHT_CROSSBOW, offhand: null, helmet: ITEMS.HUNTER_HOOD,
                 armor: ITEMS.KNIGHT_ARMOR, boots: ITEMS.HUNTER_SHOES,
                 cape: ITEMS.THETFORD_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -257,7 +257,7 @@ const BUILDS_DB = {
         description: '10+ kişilik Avalon içerikleri. Resim referansı: 10 Man Ava Dungeon Builds.',
         roles: [
             {
-                role: 'MAIN TANK', difficulty: 'medium',
+                role: 'Ana Tank', difficulty: 'medium',
                 weapon: ITEMS.IRON_BREAKER, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.HELMET_PLATE_DW,
                 armor: ITEMS.REINFORCED_CHEST, boots: ITEMS.GUARDIAN_BOOTS,
                 cape: ITEMS.MARTLOCK_CAPE, food: ITEMS.BREAD, potion: ITEMS.MAJOR_RESISTANCE,
@@ -265,7 +265,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.CLARENT, ITEMS.OATHKEEPERS, ITEMS.SPIRITHUNTER]
             },
             {
-                role: 'SECOND TANK', difficulty: 'medium',
+                role: 'İkincil Tank', difficulty: 'medium',
                 weapon: ITEMS.CLARENT, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.SOLDIER_HELMET,
                 armor: ITEMS.GUARD_ARMOR, boots: ITEMS.SOLDIER_BOOTS,
                 cape: ITEMS.FORT_CAPE, food: ITEMS.BREAD, potion: ITEMS.GIANT_STRENGTH,
@@ -273,7 +273,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.IRON_BREAKER, ITEMS.SHIELD_ROYAL, ITEMS.BOOTS_PLATE_DW]
             },
             {
-                role: 'MAIN HEALER', difficulty: 'easy',
+                role: 'Ana Şifacı', difficulty: 'easy',
                 weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -281,7 +281,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE, ITEMS.BOOTS_CLOTH_DW]
             },
             {
-                role: 'GREAT ARCANE', difficulty: 'medium',
+                role: 'Destek (Büyük Arkana)', difficulty: 'medium',
                 weapon: ITEMS.GREATARCANE, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.ROBE_OF_PROT, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.CAERLEON_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -289,7 +289,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.LIFETOUCH, ITEMS.MISTCALLER, ITEMS.COWL_CLOTH]
             },
             {
-                role: 'IR STALKER', difficulty: 'hard',
+                role: 'Zırh Kırıcı (Demirkökü)', difficulty: 'hard',
                 weapon: ITEMS.IRONROOT, offhand: null, helmet: ITEMS.HUNTER_HOOD,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.HUNTER_SHOES,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -297,15 +297,15 @@ const BUILDS_DB = {
                 swaps: [ITEMS.WILDSTAFF, ITEMS.LIGHTCALLER, ITEMS.STALKER_JACKET]
             },
             {
-                role: 'CRYSTAL REAPER', difficulty: 'hard',
+                role: 'Alan Hasarı (Gölgegetiren)', difficulty: 'hard',
                 weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Cursed Sickle', 'Inner Fire', 'Desecrate', 'Hellfire Hands', 'Black Hands', 'E × Q spam → W → R boss dön swap: Weeping/Boltcaster/Artic (min T7.3)'),
+                skills: SKILL('Cursed Sickle', 'Inner Fire', 'Desecrate', 'Hellfire Hands', 'Black Hands', 'E x Q Sürekli → W → R (Bossa) Değişim: Ağlayan/Okatar (Min T7.3)'),
                 swaps: [ITEMS.WEEPING, ITEMS.BOLTCASTER, ITEMS.WARCALLER]
             },
             {
-                role: 'BLAZING', difficulty: 'medium',
+                role: 'Alan Hasarı (Azap Asası)', difficulty: 'medium',
                 weapon: ITEMS.BLAZING, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -313,7 +313,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.SHADOWCALLER, ITEMS.CARRIONCALLER]
             },
             {
-                role: 'SHADOWCALLER', difficulty: 'hard',
+                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
                 weapon: ITEMS.SHADOWCALLER, offhand: null, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -321,7 +321,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.WEEPING, ITEMS.LIGHT_CROSSBOW, ITEMS.ROYAL_JACKET]
             },
             {
-                role: 'LIGHT CROSSBOW', difficulty: 'easy',
+                role: 'Hasar (Hafif Arbalet)', difficulty: 'easy',
                 weapon: ITEMS.LIGHT_CROSSBOW, offhand: null, helmet: ITEMS.HUNTER_HOOD,
                 armor: ITEMS.KNIGHT_ARMOR, boots: ITEMS.HUNTER_SHOES,
                 cape: ITEMS.THETFORD_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -329,15 +329,15 @@ const BUILDS_DB = {
                 swaps: [ITEMS.BOLTCASTER, ITEMS.BOW_BADON, ITEMS.STALKER_JACKET]
             },
             {
-                role: 'WEEPING', difficulty: 'hard',
+                role: 'Hasar (Ağlayan Arbalet)', difficulty: 'hard',
                 weapon: ITEMS.WEEPING, offhand: null, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.ROBE_OF_PROT, boots: ITEMS.CULTIST_SANDALS,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.ROAST_PORK, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Vile Curse', 'Corpse Explosion', 'Soulburn', 'Reap', 'Endless Dark', 'W yerleştir → Q tüm gruba → E canavar patlat'),
+                skills: SKILL('Vile Curse', 'Corpse Explosion', 'Soulburn', 'Reap', 'Endless Dark', 'W Yerleştir → Q Tüm Gruba → E Yaratıkları Patlat'),
                 swaps: [ITEMS.SHADOWCALLER, ITEMS.BLAZING]
             },
             {
-                role: 'CHILLHOWL', difficulty: 'medium',
+                role: 'Hasar (Kırağı Asası)', difficulty: 'medium',
                 weapon: ITEMS.CHILLHOWL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -345,7 +345,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.WARCALLER, ITEMS.SHADOWCALLER]
             },
             {
-                role: 'SCOUT / KAÇIŞ', difficulty: 'easy',
+                role: 'Gözcü / Kaçış', difficulty: 'easy',
                 weapon: ITEMS.DOUBLEBLADE, offhand: null, helmet: ITEMS.HOOD_ASSASSIN,
                 armor: ITEMS.ASSASSIN_JACKET, boots: ITEMS.ASSASSIN_SHOES,
                 cape: ITEMS.BLANKET_CAPE, food: ITEMS.SALAD, potion: ITEMS.INVISIBILITY,
@@ -359,7 +359,7 @@ const BUILDS_DB = {
         description: 'Avalon altın kazanma içerikleri. Hızlı temizleme ve hayatta kalma öncelikli.',
         roles: [
             {
-                role: 'DPS (Deathgivers)', difficulty: 'easy',
+                role: 'Hasar (Çifte Hançer)', difficulty: 'easy',
                 weapon: ITEMS.DEATHGIVERS, offhand: null, helmet: ITEMS.HOOD_ASSASSIN,
                 armor: ITEMS.ASSASSIN_JACKET, boots: ITEMS.ASSASSIN_SHOES,
                 cape: ITEMS.BLANKET_CAPE, food: ITEMS.PORK_OMELETTE, potion: ITEMS.MAJOR_HEALING,
@@ -367,7 +367,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.BEARCLAWS, ITEMS.DOUBLEBLADE]
             },
             {
-                role: 'Healer (Hallowfall)', difficulty: 'easy',
+                role: 'Şifacı (Kutsal Hazan)', difficulty: 'easy',
                 weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -381,7 +381,7 @@ const BUILDS_DB = {
         description: 'Tek kişilik takip ve gankleme. Yüksek mobilite ve sürpriz hasar.',
         roles: [
             {
-                role: 'Ganker (Deathgivers)', difficulty: 'easy',
+                role: 'Pusucu (Çifte Hançer)', difficulty: 'easy',
                 weapon: ITEMS.DEATHGIVERS, offhand: null, helmet: ITEMS.HOOD_ASSASSIN,
                 armor: ITEMS.ASSASSIN_JACKET, boots: ITEMS.ASSASSIN_SHOES,
                 cape: ITEMS.BLANKET_CAPE, food: ITEMS.PORK_OMELETTE, potion: ITEMS.INVISIBILITY,
@@ -389,11 +389,11 @@ const BUILDS_DB = {
                 swaps: [ITEMS.BEARCLAWS, ITEMS.DOUBLEBLADE, ITEMS.WHISPERING]
             },
             {
-                role: 'Ganker (Bearclaws)', difficulty: 'medium',
+                role: 'Pusucu (Ayı Pençesi)', difficulty: 'medium',
                 weapon: ITEMS.BEARCLAWS, offhand: null, helmet: ITEMS.HOOD_ASSASSIN,
                 armor: ITEMS.ASSASSIN_JACKET, boots: ITEMS.ASSASSIN_SHOES,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.PORK_OMELETTE, potion: ITEMS.INVISIBILITY,
-                skills: SKILL('Bear Paws Q', 'Rending Spin', 'Deadly Lunge', null, 'Predatory Focus', 'Invisible → W spin → Q × R burst'),
+                skills: SKILL('Bear Paws Q', 'Rending Spin', 'Deadly Lunge', null, 'Predatory Focus', 'Görünmezlik → W Dönüş → Q x R Patlama'),
                 swaps: [ITEMS.DEATHGIVERS, ITEMS.DOUBLEBLADE]
             },
         ]
@@ -403,7 +403,7 @@ const BUILDS_DB = {
         description: '4 kişilik gank grubu. Holder, DPS, Healer kombinasyonu.',
         roles: [
             {
-                role: 'Holder (Double Blade)', difficulty: 'medium',
+                role: 'Yakalayıcı (Çifteler)', difficulty: 'medium',
                 weapon: ITEMS.DOUBLEBLADE, offhand: null, helmet: ITEMS.HOOD_ASSASSIN,
                 armor: ITEMS.ASSASSIN_JACKET, boots: ITEMS.ASSASSIN_SHOES,
                 cape: ITEMS.BLANKET_CAPE, food: ITEMS.PORK_OMELETTE, potion: ITEMS.CLEANSE,
@@ -411,7 +411,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.REALMBREAKER, ITEMS.SPIRITHUNTER]
             },
             {
-                role: 'DPS (Bearclaws)', difficulty: 'easy', isGankGear: true,
+                role: 'Hasar (Ayı Pençesi)', difficulty: 'easy', isGankGear: true,
                 weapon: ITEMS.BEARCLAWS, offhand: null, helmet: ITEMS.HOOD_ASSASSIN,
                 armor: ITEMS.ASSASSIN_JACKET, boots: ITEMS.ASSASSIN_SHOES,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.PORK_OMELETTE, potion: ITEMS.MAJOR_HEALING,
@@ -419,7 +419,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.DEATHGIVERS, ITEMS.WHISPERING]
             },
             {
-                role: 'DPS (1H Cursed)', difficulty: 'medium',
+                role: 'Hasar (Tek Elli Lanetli)', difficulty: 'medium',
                 weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -427,7 +427,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.CARRIONCALLER, ITEMS.WEEPING]
             },
             {
-                role: 'Healer (Hallowfall)', difficulty: 'easy',
+                role: 'Şifacı (Kutsal Hazan)', difficulty: 'easy',
                 weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -441,7 +441,7 @@ const BUILDS_DB = {
         description: '7 kişilik gank grubu. Daha organize holder + burst DPS setup.',
         roles: [
             {
-                role: 'Holder (Double Blade)', difficulty: 'medium',
+                role: 'Yakalayıcı (Çifteler)', difficulty: 'medium',
                 weapon: ITEMS.DOUBLEBLADE, offhand: null, helmet: ITEMS.HOOD_ASSASSIN,
                 armor: ITEMS.ASSASSIN_JACKET, boots: ITEMS.ASSASSIN_SHOES,
                 cape: ITEMS.BLANKET_CAPE, food: ITEMS.PORK_OMELETTE, potion: ITEMS.CLEANSE,
@@ -449,7 +449,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.REALMBREAKER, ITEMS.SPIRITHUNTER]
             },
             {
-                role: 'Holder (1H Frost)', difficulty: 'hard',
+                role: 'Yakalayıcı (Tek Elli Büyü)', difficulty: 'hard',
                 weapon: ITEMS.WARCALLER, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.ROBE_OF_PROT, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.THETFORD_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.CLEANSE,
@@ -457,7 +457,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.CHILLHOWL, ITEMS.IRON_BREAKER]
             },
             {
-                role: 'DPS (Bearclaws)', difficulty: 'easy',
+                role: 'Hasar (Ayı Pençesi)', difficulty: 'easy',
                 weapon: ITEMS.BEARCLAWS, offhand: null, helmet: ITEMS.HOOD_ASSASSIN,
                 armor: ITEMS.ASSASSIN_JACKET, boots: ITEMS.ASSASSIN_SHOES,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.PORK_OMELETTE, potion: ITEMS.MAJOR_HEALING,
@@ -465,7 +465,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.DEATHGIVERS, ITEMS.DOUBLEBLADE]
             },
             {
-                role: 'DPS (Whispering Bow)', difficulty: 'easy',
+                role: 'Hasar (Fısıldayan Yay)', difficulty: 'easy',
                 weapon: ITEMS.WHISPERING, offhand: null, helmet: ITEMS.HUNTER_HOOD,
                 armor: ITEMS.STALKER_JACKET, boots: ITEMS.HUNTER_SHOES,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -473,7 +473,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.BOW_BADON, ITEMS.BOLTCASTER]
             },
             {
-                role: 'DPS (1H Cursed)', difficulty: 'medium',
+                role: 'Hasar (Tek Elli Lanetli)', difficulty: 'medium',
                 weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -481,7 +481,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.WEEPING, ITEMS.CARRIONCALLER]
             },
             {
-                role: 'DPS (1H Deathgivers)', difficulty: 'easy',
+                role: 'Hasar (Çifte Hançer)', difficulty: 'easy',
                 weapon: ITEMS.DEATHGIVERS, offhand: null, helmet: ITEMS.HOOD_ASSASSIN,
                 armor: ITEMS.ASSASSIN_JACKET, boots: ITEMS.ASSASSIN_SHOES,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.PORK_OMELETTE, potion: ITEMS.MAJOR_HEALING,
@@ -489,7 +489,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.BEARCLAWS, ITEMS.DOUBLEBLADE]
             },
             {
-                role: 'Healer (Hallowfall)', difficulty: 'easy',
+                role: 'Şifacı (Kutsal Hazan)', difficulty: 'easy',
                 weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -511,7 +511,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.CLARENT, ITEMS.OATHKEEPERS]
             },
             {
-                role: 'Healer', difficulty: 'easy',
+                role: 'Şifacı', difficulty: 'easy',
                 weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -519,7 +519,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE]
             },
             {
-                role: 'DPS (Shadowcaller)', difficulty: 'hard',
+                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
                 weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -541,7 +541,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.CLARENT, ITEMS.REALMBREAKER]
             },
             {
-                role: 'DPS (Chillhowl)', difficulty: 'medium',
+                role: 'Hasar (Kırağı Asası)', difficulty: 'medium',
                 weapon: ITEMS.CHILLHOWL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -555,7 +555,7 @@ const BUILDS_DB = {
         description: 'Büyük ölçekli ZvZ savaşları. Özel ZvZ silahları ve koordineli roller.',
         roles: [
             {
-                role: 'Off Tank / Silence', difficulty: 'hard',
+                role: 'İkincil Tank / Susturucu', difficulty: 'hard',
                 weapon: ITEMS.CLARENT, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.SOLDIER_HELMET,
                 armor: ITEMS.GUARD_ARMOR, boots: ITEMS.SOLDIER_BOOTS,
                 cape: ITEMS.CAERLEON_CAPE, food: ITEMS.BREAD, potion: ITEMS.GIANT_STRENGTH,
@@ -563,7 +563,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.SPIRITHUNTER, ITEMS.REALMBREAKER, ITEMS.IRON_BREAKER]
             },
             {
-                role: 'Great Arcane', difficulty: 'medium',
+                role: 'Destek (Büyük Arkana)', difficulty: 'medium',
                 weapon: ITEMS.GREATARCANE, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.ROBE_OF_PROT, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.CAERLEON_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -571,7 +571,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.LIFETOUCH, ITEMS.LYMHURST_ORB]
             },
             {
-                role: 'Main Healer', difficulty: 'easy',
+                role: 'Ana Şifacı', difficulty: 'easy',
                 weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -579,7 +579,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE, ITEMS.LIGHTCALLER]
             },
             {
-                role: 'Shadowcaller DPS', difficulty: 'hard',
+                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
                 weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -587,7 +587,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.WEEPING, ITEMS.LIGHT_CROSSBOW, ITEMS.CARRIONCALLER]
             },
             {
-                role: 'Lightcaller', difficulty: 'medium',
+                role: 'Destek (Demirkökü)', difficulty: 'medium',
                 weapon: ITEMS.LIGHTCALLER, offhand: null, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.ROBE_OF_PROT, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -595,7 +595,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.IRONROOT, ITEMS.WILDSTAFF]
             },
             {
-                role: 'Chillhowl DPS', difficulty: 'medium',
+                role: 'Hasar (Kırağı Asası)', difficulty: 'medium',
                 weapon: ITEMS.CHILLHOWL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -609,7 +609,7 @@ const BUILDS_DB = {
         description: '10vs10 Outpost savaşları. Hızlı reaksiyon ve pozisyonlama kritik.',
         roles: [
             {
-                role: 'Main Tank', difficulty: 'medium',
+                role: 'Ana Tank', difficulty: 'medium',
                 weapon: ITEMS.IRON_BREAKER, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.HELMET_PLATE_DW,
                 armor: ITEMS.REINFORCED_CHEST, boots: ITEMS.GUARDIAN_BOOTS,
                 cape: ITEMS.MARTLOCK_CAPE, food: ITEMS.BREAD, potion: ITEMS.MAJOR_RESISTANCE,
@@ -617,7 +617,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.CLARENT, ITEMS.SPIRITHUNTER, ITEMS.OATHKEEPERS]
             },
             {
-                role: 'Healer', difficulty: 'easy',
+                role: 'Şifacı', difficulty: 'easy',
                 weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
                 cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
@@ -625,7 +625,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE]
             },
             {
-                role: 'DPS (Shadowcaller)', difficulty: 'hard',
+                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
                 weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
@@ -633,7 +633,7 @@ const BUILDS_DB = {
                 swaps: [ITEMS.WEEPING, ITEMS.CARRIONCALLER]
             },
             {
-                role: 'DPS (Chillhowl)', difficulty: 'medium',
+                role: 'Hasar (Kırağı Asası)', difficulty: 'medium',
                 weapon: ITEMS.CHILLHOWL, offhand: null, helmet: ITEMS.MAGE_COWL,
                 armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
                 cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
