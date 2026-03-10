@@ -1,0 +1,462 @@
+/* ========== NEW PANELS CSS ========== */
+
+/* Guild Wars Panel */
+.gw-stat-card {
+    background: var(--bg-main);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+}
+
+.gw-stat-card .stat-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.gw-stat-card .stat-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--accent-gold);
+}
+
+#gw-members-tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#gw-members-tbody td {
+    padding: 8px 10px;
+    font-size: 12px;
+}
+
+/* Territory Map Panel */
+.tm-map-canvas {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, #1a1f2e 0%, #0f1117 100%);
+    border: 1px solid var(--border-light);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.tm-territory-node {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    opacity: 0.8;
+}
+
+.tm-territory-node:hover {
+    opacity: 1;
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.tm-node-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 4px rgba(0, 0, 0, 0.8);
+}
+
+.tm-contested-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    font-size: 16px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Battle Analytics Panel */
+.ba-zone-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ba-zone-rank {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--accent-gold);
+    min-width: 40px;
+    text-align: center;
+}
+
+.ba-zone-info {
+    flex: 1;
+}
+
+.ba-zone-name {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.ba-zone-stats {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.ba-zone-heat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 150px;
+}
+
+.ba-heat-bar {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.ba-heat-fill {
+    height: 100%;
+    transition: width 0.3s ease;
+}
+
+#ba-events-tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Player Rankings */
+#pr-rankings-tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+#pr-rankings-tbody td {
+    padding: 8px 10px;
+    font-size: 12px;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.ranking-medal {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.ranking-badge-gold {
+    color: #ffd700;
+}
+
+.ranking-badge-silver {
+    color: #c0c0c0;
+}
+
+.ranking-badge-bronze {
+    color: #cd7f32;
+}
+
+/* Ranking Tabs */
+#pr-ranking-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-light);
+    padding-bottom: 12px;
+}
+
+#pr-ranking-tabs button {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 500;
+    transition: all 0.2s;
+    border-bottom: 2px solid transparent;
+}
+
+#pr-ranking-tabs button:hover {
+    color: var(--text-main);
+}
+
+#pr-ranking-tabs button.active {
+    color: var(--accent-gold);
+    border-bottom-color: var(--accent-gold);
+}
+
+/* Resource Market Tracker */
+#rm-materials-tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+#rm-material-category {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+}
+
+.lc-zone-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.lc-zone-card h4 {
+    font-size: 13px;
+    color: var(--accent-gold);
+    margin-bottom: 6px;
+}
+
+.lc-zone-card p {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin: 3px 0;
+}
+
+#lc-mobs-tbody tr:hover {
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+}
+
+/* Enchantment ROI */
+#er-results-container .modal-stat {
+    background: var(--bg-main);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+}
+
+.res-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 6px 0;
+    border-bottom: 1px solid var(--border-light);
+    font-size: 12px;
+}
+
+/* Advanced Filters */
+#af-active-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-gold);
+    color: #000;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-left: 6px;
+}
+
+.filter-section {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 12px;
+}
+
+.filter-section-title {
+    font-size: 12px;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.filter-group-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filter-input {
+    flex: 1;
+    min-width: 120px;
+}
+
+.filter-input input,
+.filter-input select {
+    width: 100%;
+}
+
+/* Small Button */
+.btn-sm {
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+}
+
+/* Generic Panel Styles */
+.new-panel {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+}
+
+.panel-content-wrapper {
+    flex: 1;
+    overflow-y: auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.panel-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+}
+
+.panel-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+/* Activity Filter */
+.activity-filter-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.activity-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-light);
+    border-radius: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.activity-badge:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.activity-badge.active {
+    background: var(--accent-gold);
+    color: #000;
+    border-color: var(--accent-gold);
+}
+
+/* Territory Info Cards */
+.territory-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.territory-card {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.territory-card-title {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 6px;
+}
+
+.territory-card-value {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--accent-gold);
+}
+
+/* Modal Stat */
+.modal-stat {
+    background: var(--bg-main);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid var(--border-light);
+}
+
+.modal-stat-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    display: block;
+    margin-bottom: 6px;
+}
+
+.modal-stat-val {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--accent-gold);
+}
+
+/* Responsive Adjustments for New Panels */
+@media (max-width: 1024px) {
+    .panel-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .tm-territory-node {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media (max-width: 768px) {
+    .panel-grid-2,
+    .panel-grid-4 {
+        grid-template-columns: 1fr;
+    }
+    
+    .tm-map-canvas {
+        height: 250px;
+    }
+    
+    #pr-ranking-tabs {
+        flex-wrap: wrap;
+    }
+    
+    .ba-zone-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .ba-zone-heat {
+        width: 100%;
+    }
+    
+    .filter-group-row {
+        flex-direction: column;
+    }
+    
+    .filter-input {
+        min-width: 100%;
+    }
+}

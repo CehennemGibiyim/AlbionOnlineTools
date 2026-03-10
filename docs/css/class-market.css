@@ -1,0 +1,406 @@
+/* Class Market CSS - Albion Online Sınıf Sistemi Stilleri */
+
+/* Sınıf Seçimi */
+.class-selection {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.class-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px 20px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: white;
+}
+
+.class-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.class-btn.active {
+    border-color: #fff;
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.class-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.class-name {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Kategori Seçimi */
+.category-selection {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.category-btn {
+    padding: 8px 16px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: transparent;
+    color: #f59e0b;
+}
+
+.category-btn:hover {
+    background: #f59e0b;
+    color: #000;
+}
+
+.category-btn.active {
+    background: #f59e0b;
+    color: #000;
+}
+
+/* Tier Bölümleri */
+.tier-section {
+    margin-bottom: 30px;
+}
+
+.tier-title {
+    color: #f59e0b;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #f59e0b;
+}
+
+/* Eşya Grid'i */
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+/* Eşya Kartları */
+.item-card {
+    background: #2c3e50;
+    border: 1px solid #34495e;
+    border-radius: 8px;
+    padding: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.item-card:hover {
+    background: #34495e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.item-image {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.item-image img {
+    border-radius: 4px;
+    background: #000;
+}
+
+.item-tier {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #f59e0b;
+    color: #000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.item-name {
+    color: #fff;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 5px;
+    word-break: break-word;
+}
+
+.item-type {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 3px;
+}
+
+.item-craftable {
+    color: #4CAF50;
+    font-size: 11px;
+}
+
+.item-craftable:contains("Üretilemez") {
+    color: #f44336;
+}
+
+/* Search Dropdown */
+.search-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #2c3e50;
+    border: 1px solid #34495e;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+}
+
+.search-dropdown.open {
+    display: block;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: #34495e;
+}
+
+.dropdown-item img {
+    border-radius: 4px;
+    background: #000;
+}
+
+.dropdown-item-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.dropdown-item-name {
+    color: #fff;
+    font-weight: bold;
+    font-size: 13px;
+    margin-bottom: 2px;
+    word-break: break-word;
+}
+
+.dropdown-item-sub {
+    color: #888;
+    font-size: 11px;
+    word-break: break-word;
+}
+
+/* Sınıf Renkleri */
+.class-btn[data-class="WARRIOR"] { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+.class-btn[data-class="MAGE"] { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
+.class-btn[data-class="RANGER"] { background: linear-gradient(135deg, #27ae60 0%, #229954 100%); }
+.class-btn[data-class="ASSASSIN"] { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
+.class-btn[data-class="HEALER"] { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
+.class-btn[data-class="TANK"] { background: linear-gradient(135deg, #95a5a6 0%, #7f8c8d 100%); }
+
+/* Responsive */
+@media (max-width: 768px) {
+    .class-selection {
+        gap: 5px;
+    }
+    
+    .class-btn {
+        min-width: 80px;
+        padding: 8px 12px;
+    }
+    
+    .class-icon {
+        font-size: 18px;
+    }
+    
+    .class-name {
+        font-size: 12px;
+    }
+    
+    .items-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+    }
+    
+    .item-card {
+        padding: 10px;
+        gap: 10px;
+    }
+    
+    .item-image img {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* Gold Price Styles */
+.gold-stats {
+    margin-bottom: 20px;
+}
+
+.gold-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stat-card {
+    background: #2c3e50;
+    border: 1px solid #34495e;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+}
+
+.stat-label {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.stat-value {
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+
+.stat-value.current {
+    color: #FFD700;
+    font-size: 20px;
+}
+
+.stat-value.positive {
+    color: #4CAF50;
+}
+
+.stat-value.negative {
+    color: #f44336;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin: 20px 0;
+}
+
+/* Loading ve Empty States */
+.empty-state {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+}
+
+.empty-state span {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.empty-state p {
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    height: 400px;
+    margin: 20px 0;
+}
+
+/* Price Cards */
+.market-price-cards {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.price-card {
+    background: #2c3e50;
+    border: 1px solid #34495e;
+    border-radius: 4px;
+    padding: 8px 12px;
+    text-align: center;
+    min-width: 80px;
+}
+
+.city-name {
+    font-size: 12px;
+    color: #888;
+    margin-bottom: 2px;
+}
+
+.price-value {
+    font-size: 14px;
+    font-weight: bold;
+    color: #4CAF50;
+    margin-bottom: 2px;
+}
+
+.price-date {
+    font-size: 10px;
+    color: #666;
+}
+
+/* Market Item Info */
+.market-item-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    background: #2c3e50;
+    border: 1px solid #34495e;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.market-item-info img {
+    border-radius: 4px;
+    background: #000;
+}
+
+.market-item-info h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+}
+
+.market-item-info span {
+    color: #888;
+    font-size: 12px;
+}

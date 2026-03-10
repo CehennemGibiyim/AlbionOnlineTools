@@ -1,0 +1,358 @@
+/* ========== APP FIXES - NEW COMPONENTS ========== */
+
+/* Loading Spinner */
+.global-loader {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 3000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(2px);
+}
+
+.loader-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.spinner {
+    width: 48px;
+    height: 48px;
+    border: 4px solid rgba(245, 158, 11, 0.2);
+    border-top-color: #f59e0b;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+#loader-text {
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+}
+
+.progress-bar {
+    width: 200px;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    overflow: hidden;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #f59e0b, #fcd34d);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Toast Container */
+.toast-container {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 3001;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.toast {
+    background: var(--bg-panel);
+    border: 1px solid var(--border-light);
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    animation: slideIn 0.3s ease;
+    min-height: 44px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.toast-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.toast-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+.toast-message {
+    flex: 1;
+    color: var(--text-main);
+}
+
+.toast-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+    font-size: 14px;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+
+.toast-close:hover {
+    color: var(--text-main);
+}
+
+.toast-success {
+    border-left: 3px solid #4ade80;
+}
+
+.toast-error {
+    border-left: 3px solid #f87171;
+}
+
+.toast-warning {
+    border-left: 3px solid #fbbf24;
+}
+
+.toast-info {
+    border-left: 3px solid #60a5fa;
+}
+
+/* Keyboard Shortcuts Modal */
+.shortcut-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.shortcut-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    padding: 8px;
+    background: var(--bg-main);
+    border-radius: 6px;
+}
+
+.shortcut-item kbd {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 28px;
+    height: 28px;
+    background: var(--bg-panel);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 0 6px;
+}
+
+/* Sticky Table Headers */
+.craft-table th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background: var(--bg-panel);
+}
+
+/* Copy Button */
+.copy-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid var(--border-light);
+    border-radius: 4px;
+    cursor: pointer;
+    color: var(--text-muted);
+    font-size: 12px;
+    transition: all 0.2s;
+    padding: 0;
+}
+
+.copy-btn:hover {
+    background: rgba(245, 158, 11, 0.15);
+    border-color: var(--accent-gold);
+    color: var(--accent-gold);
+}
+
+.copy-btn.copied {
+    background: rgba(74, 222, 128, 0.15);
+    border-color: #4ade80;
+    color: #4ade80;
+}
+
+/* Color Contrast Improvements */
+body[data-theme="default"] {
+    --text-main: #e8e8e8;
+    --text-muted: #a0a0a0;
+    --text-green: #5fdd7f;
+    --text-red: #ff6b6b;
+    --accent-gold: #f59e0b;
+    --accent-blue: #64b5f6;
+    --bg-main: #0f1117;
+    --bg-header: #1a1f2e;
+    --bg-panel: #1a1f2e;
+    --bg-input: #2d3139;
+    --bg-input-dark: #24282e;
+    --bg-hover: #2d3139;
+    --border-color: #3c4555;
+    --border-light: #3c4555;
+}
+
+/* Increased contrast for dark themes */
+.craft-table th {
+    background: var(--bg-header);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.filter-bar {
+    background: var(--bg-panel);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.bottom-summary {
+    background: var(--bg-header);
+    border-top: 2px solid var(--border-color);
+}
+
+/* Modal Improvements */
+.modal-box {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.modal-overlay {
+    backdrop-filter: blur(3px);
+}
+
+/* Empty State Improvements */
+.empty-state {
+    background: var(--bg-panel);
+    border-radius: 12px;
+    margin: 32px;
+    border: 1px dashed var(--border-light);
+}
+
+.empty-state span {
+    font-size: 64px;
+    opacity: 0.6;
+}
+
+/* Responsive Design - Mobile Adjustments */
+@media (max-width: 1024px) {
+    .left-sidebar {
+        width: 180px;
+    }
+    
+    .filter-bar {
+        flex-direction: column;
+        min-height: auto;
+    }
+    
+    .btn-fetch {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .toggle-group {
+        flex-wrap: wrap;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header {
+        flex-wrap: wrap;
+    }
+    
+    .left-sidebar {
+        display: none;
+    }
+    
+    .craft-table {
+        font-size: 11px;
+    }
+    
+    .craft-table td,
+    .craft-table th {
+        padding: 5px 8px;
+    }
+    
+    .bottom-summary {
+        gap: 16px;
+        padding: 0 12px;
+    }
+    
+    .panel-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .market-item-info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .market-price-cards {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .chart-container {
+        height: 200px;
+    }
+}
+
+/* Accessibility */
+.nav-tab:focus-visible,
+.btn-fetch:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+    .main-header,
+    .filter-bar,
+    .left-sidebar,
+    .main-nav,
+    .btn-fetch,
+    .toast-container {
+        display: none !important;
+    }
+    
+    .craft-table {
+        font-size: 10px;
+    }
+}

@@ -125,3 +125,111 @@
     --border-light: #e2e8f0;
     --border-color: #cbd5e1;
 }
+
+/* Theme 6: Crimson */
+[data-theme="crimson"] {
+    --bg-main: #0f0606;
+    --bg-header: #1a0a0a;
+    --bg-panel: #150808;
+    --bg-input: #0f0606;
+    --bg-input-dark: #080303;
+
+    --text-main: #fecaca;
+    --text-muted: #9ca3af;
+    --text-green: #4ade80;
+    --text-red: #f87171;
+
+    --accent-gold: #ef4444;
+    --accent-blue: #f87171;
+    --accent-blue-light: #fca5a5;
+
+    --border-light: #3b1010;
+    --border-color: #200a0a;
+}
+
+/* Theme 7: Teal */
+[data-theme="teal"] {
+    --bg-main: #011615;
+    --bg-header: #042f2e;
+    --bg-panel: #031f1e;
+    --bg-input: #011615;
+    --bg-input-dark: #000d0d;
+
+    --text-main: #ccfbf1;
+    --text-muted: #6d9999;
+    --text-green: #2dd4bf;
+    --text-red: #f87171;
+
+    --accent-gold: #14b8a6;
+    --accent-blue: #5eead4;
+    --accent-blue-light: #99f6e4;
+
+    --border-light: #134e4a;
+    --border-color: #0d3b38;
+}
+
+/* Theme 8: Amber */
+[data-theme="amber"] {
+    --bg-main: #0c0802;
+    --bg-header: #1c1206;
+    --bg-panel: #150e04;
+    --bg-input: #0c0802;
+    --bg-input-dark: #060401;
+
+    --text-main: #fef3c7;
+    --text-muted: #92400e;
+    --text-green: #34d399;
+    --text-red: #f87171;
+
+    --accent-gold: #f97316;
+    --accent-blue: #fb923c;
+    --accent-blue-light: #fdba74;
+
+    --border-light: #451a03;
+    --border-color: #2c1001;
+}
+
+/* Theme 9: Midnight Neon (Modern & Vibrant) */
+[data-theme="neon"] {
+    --bg-main: #020617;
+    --bg-header: #0f172a;
+    --bg-panel: #1e293b;
+    --bg-input: #020617;
+    --bg-input-dark: #000000;
+
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-green: #22c55e;
+    --text-red: #ef4444;
+
+    --accent-gold: #8b5cf6;
+    /* Vibrant Purple */
+    --accent-blue: #06b6d4;
+    /* Neon Cyan */
+    --accent-blue-light: #22d3ee;
+
+    --border-light: #334155;
+    --border-color: #1e293b;
+}
+
+/* Theme 10: Obsidian Gold (Premium) */
+[data-theme="obsidian"] {
+    --bg-main: #0a0a0a;
+    --bg-header: #121212;
+    --bg-panel: #1a1a1a;
+    --bg-input: #080808;
+    --bg-input-dark: #000000;
+
+    --text-main: #f0f0f0;
+    --text-muted: #737373;
+    --text-green: #10b981;
+    --text-red: #f43f5e;
+
+    --accent-gold: #d4af37;
+    /* Real Gold */
+    --accent-blue: #a3a3a3;
+    --accent-blue-light: #d4d4d4;
+
+    --border-light: #262626;
+    --border-color: #171717;
+}

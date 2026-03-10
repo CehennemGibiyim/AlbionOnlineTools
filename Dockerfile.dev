@@ -1,0 +1,19 @@
+# Development Dockerfile with hot-reload support
+
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY package*.json ./
+
+# Install all dependencies (including dev)
+RUN npm install
+
+# Copy application
+COPY . .
+
+EXPOSE 3000
+
+# Run in development mode with nodemon
+CMD ["npx", "nodemon", "--watch", "js", "--watch", "server.js", "--ext", "js,json", "server.js"]

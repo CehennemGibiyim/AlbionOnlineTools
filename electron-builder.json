@@ -1,0 +1,35 @@
+{
+  "appId": "com.albion.tools",
+  "productName": "Albion Online Tools",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "index.html",
+    "main.js",
+    "preload.js",
+    "service-worker.js",
+    "manifest.json",
+    "css/**/*",
+    "js/**/*",
+    "data/**/*",
+    "node_modules/**/*"
+  ],
+  "win": {
+    "target": [
+      "nsis",
+      "portable"
+    ],
+    "certificateFile": null,
+    "certificatePassword": null,
+    "signingHashAlgorithms": null,
+    "sign": "./customSign.js"
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "shortcutName": "Albion Online Tools"
+  }
+}

@@ -1,0 +1,102 @@
+Albion Online Tools — Büyük Güncelleme Planı
+Mevcut tek sayfalık uygulamayı 5 sekmeli tam özellikli bir araca dönüştüreceğiz.
+
+User Review Required
+IMPORTANT
+
+Auto-Update / AI özelliği: Oyun güncellemelerinde yeni eşyaları otomatik çekme için Albion Data Project veya resmi asset listesi kullanacağız. Bu tamamen tarayıcı tabanlı (Fetch API) ve 
+build-db.js
+ yeniden çalıştırılarak güncellenecek. Gerçek bir "AI" entegrasyonu (GPT vb.) eklemek için API key gerekir — şimdilik otomatik olarak Albion'ın item listesi API'sini kontrol edecek ve farkı gösterecek basit bir sürüm yapıyoruz.
+
+WARNING
+
+KillBoard API: albiononlinebuilds.com kendi API'sini kullanır, doğrudan erişilemez. Bunun yerine Albion Online resmi murk feed (gameinfo.albiononline.com/api/gameinfo/killboard) kullanılacak. CORS kısıtı olabileceği için bir proxy wrapper gerekebilir.
+
+Proposed Changes
+Ana Yapı — Navigation Overhaul
+[MODIFY] 
+index.html
+Header'a 5 sekme ekle: Üretim (Craft), Avalon Yolları (Keşif), KillBoard, Pazar Analizi, Ayarlar
+Her sekme için ayrı <section> div'leri oluştur, JS ile show/hide
+Filter bar'ı sadece Craft sekmesinde göster
+Lang toggle'ı sidebar'dan kaldır, Ayarlar bölümüne taşı
+Kategori/Arama Bug Fix
+[MODIFY] 
+js/app.js
+BUG: 
+getLocalDatabase()
+ async bir fonksiyon ama window.AppDB = window.ApiService.getLocalDatabase() await edilmiyor. DB bir Promise olarak atanıyor, bu yüzden kategoriler ve içerik hiç yüklenmiyor.
+
+Fix:
+
+js
+// Mevcut (YANLIŞ):
+window.AppDB = window.ApiService.getLocalDatabase();
+// Düzeltilmiş:
+window.AppDB = await window.ApiService.getLocalDatabase();
+Tüm DOMContentLoaded callback'ini async yapacağız.
+
+Arama Otomatik Tamamlama (Slishy-style)
+[MODIFY] 
+js/app.js
+Tüm DB'deki item'ları düzleştirerek allItemsFlat[] listesi oluştur
+Input'a yazıldıkça dropdown göster (max 15 sonuç)
+Her sonuçta: item ikonu + adı + kategorisi
+Tıklandığında ilgili kategoriye geç ve satırı vurgula
+[MODIFY] 
+css/styles.css
+Autocomplete dropdown stilleri (glassmorphism, hover efekti)
+Ayarlar (Settings) Sekmesi
+[NEW] 
+js/settings.js
+10 Dil: TR, EN, DE, FR, RU, ZH, ES, PT, IT, KO — translations objesi
+Dil seçimi localStorage'a kaydedilir, sayfa yüklenince uygulanır
+applyTranslations() tüm data-i18n attribute'larını günceller
+Tema Seçici: Renkli kart şeklinde (dark, blue, green, purple, light + 3 yeni: crimson, teal, amber)
+Sunucu seçimi: West / East
+Hakkında & Güncelleme: Albion API'den item listesini çekip DB ile karşılaştıran checkForUpdates() fonksiyonu
+[MODIFY] 
+css/themes.css
+3 yeni tema ekle: Crimson (kırmızı), Teal (yeşil-mavi), Amber (turuncu)
+Avalon Yolları (Keşif) Sekmesi
+[NEW] 
+js/avalon.js
+322 Avalon haritası için statik veri seti
+Her harita: { name, tier, resources: {wood,stone,ore,cotton,hide}, chests: {small_green, small_blue, medium_green, medium_blue, big_yellow} }
+Arama + tier filtresi (T4/T5/T6/T7/T8)
+Tablo: İsim, Tier, Kaynaklar (ikonlu), Sandıklar (renk + adet badge)
+"Haritayı Aç" butonu → modal popup
+[NEW] 
+css/avalon.css
+Sandık badge stilleri (renkli oval rozetler)
+Modal stilleri
+KillBoard Sekmesi
+[NEW] 
+js/killboard.js
+https://gameinfo.albiononline.com/api/gameinfo/killboard API
+Oyuncu/guild arama
+Kill kartları: saldırgan + kurban build'i, ölüm değeri, lokasyon, zaman
+Albion render API ile ekipman ikonları
+Pazar Analizi Sekmesi
+[NEW] 
+js/market.js
+Albion Data Project history API: https://west.albion-online-data.com/api/v2/stats/history/{items}
+Eşya arama (autocomplete)
+Şehir seçimi
+Günlük / Haftalık / Aylık görünüm seçeneği
+Chart.js ile fiyat grafiği
+En iyi alım/satım lokasyonu tablosu
+[MODIFY] 
+index.html
+Chart.js CDN ekle
+Verification Plan
+Automated Tests
+Mevcut projede test infrastrukture yok. Manual browser testi yapacağız.
+
+Manual Verification (Browser ile)
+Kategori Bug Fix: index.html'i Electron veya tarayıcıda aç → sidebar'daki herhangi bir kategoriye tıkla → tablo verilerinin görünmesi lazım
+Arama: Arama kutusuna "sword" yaz → autocomplete dropdown açılmalı → bir item'a tıkla → tablo o kategoriye geçmeli
+Ayarlar: Ayarlar sekmesine tıkla → bir dil değiştir → tüm UI o dile geçmeli → tema değiştir → renkler değişmeli
+Avalon Yolları: Avalon sekmesine geç → arama kutusuna filtre uygula → haritayı aç butonuna tıkla → modal açılmalı
+KillBoard: KillBoard sekmesine geç → bir oyuncu ara → kill feed listelenmeli
+Pazar Analizi: Pazar sekmesine geç → bir eşya ara → şehir seç → günlük/haftalık/aylık periyot seç → grafik güncellemeli

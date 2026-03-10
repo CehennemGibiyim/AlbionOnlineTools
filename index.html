@@ -4,9 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f59e0b">
+    <meta name="description" content="Comprehensive Albion Online toolkit - Market analysis, crafting calculator, PvP tracking, and more">
+    <meta name="keywords" content="Albion Online, market, crafting, PvP, tools">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Albion Tools">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%230f1117' width='192' height='192'/><text x='50%' y='50%' font-size='96' fill='%23f59e0b' text-anchor='middle' dominant-baseline='middle'>⚔️</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text x='50%' y='50%' font-size='80' fill='%23f59e0b' text-anchor='middle' dominant-baseline='middle'>⚔️</text></svg>">
     <title>Albion Online - Görüntüleyici</title>
     <link rel="stylesheet" href="css/themes.css">
+<link rel="stylesheet" href="css/class-market.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/app-fixes.css">
+    <link rel="stylesheet" href="css/new-panels.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 </head>
 
@@ -27,10 +39,7 @@
                 <span class="nav-icon">🗺️</span>
                 <span data-i18n="navAvalon">Avalon Yolları (Keşif)</span>
             </button>
-            <button class="nav-tab" data-tab="killboard" onclick="switchTab('killboard')">
-                <span class="nav-icon">💀</span>
-                <span data-i18n="navKillboard">KillBoard</span>
-            </button>
+            <!-- KillBoard sekmesi GitHub Pages uyumluluğu nedeniyle kaldırıldı -->
             <button class="nav-tab" data-tab="market" onclick="switchTab('market')">
                 <span class="nav-icon">📊</span>
                 <span data-i18n="navMarket">Pazar Analizi</span>
@@ -52,31 +61,26 @@
 
     <!-- ==================== CRAFT TAB ==================== -->
     <div id="tab-craft" class="tab-content active">
-        <!-- Filter Bar -->
         <section class="filter-bar">
             <div class="search-wrapper">
                 <div class="search-box">
                     <span>🔍</span>
-                    <input type="text" id="item-search" placeholder="Eşya ara..." data-i18n-placeholder="searchItems"
-                        autocomplete="off">
+                    <input type="text" id="item-search" placeholder="Eşya ara..." data-i18n-placeholder="searchItems" autocomplete="off">
                 </div>
                 <div class="search-dropdown" id="search-dropdown"></div>
             </div>
-
             <div class="filter-group">
                 <span class="label">Kategori:</span>
                 <select id="filter-category-main">
                     <option value="ALL">Tümü</option>
                 </select>
             </div>
-
             <div class="filter-group">
                 <span class="label">Alt Kategori:</span>
                 <select id="filter-category-sub">
                     <option value="ALL">Tümü</option>
                 </select>
             </div>
-
             <div class="filter-group">
                 <span class="label">Tier:</span>
                 <div class="toggle-group" id="tier-filters">
@@ -88,7 +92,6 @@
                     <button data-val="T8">T8</button>
                 </div>
             </div>
-
             <div class="filter-group">
                 <span class="label">Enchant:</span>
                 <div class="toggle-group" id="enchant-filters">
@@ -100,7 +103,6 @@
                     <button data-val="4">.4</button>
                 </div>
             </div>
-
             <div class="filter-group">
                 <span class="label" data-i18n="labelQuality">Kalite:</span>
                 <select id="quality-filter">
@@ -111,18 +113,13 @@
                     <option value="5" data-i18n="qualMasterpiece">Efsanevi</option>
                 </select>
             </div>
-
-            <button class="btn-fetch" id="btn-fetch-prices">⟳ <span data-i18n="btnFetch">Fiyatları
-                    Güncelle</span></button>
+            <button class="btn-fetch" id="btn-fetch-prices">⟳ <span data-i18n="btnFetch">Fiyatları Güncelle</span></button>
         </section>
-
         <div class="app-body">
-            <!-- Left Sidebar -->
             <aside class="left-sidebar">
                 <div class="sidebar-section">
                     <h3 class="section-title" data-i18n="craftSettings">CRAFT AYARLARI</h3>
                 </div>
-
                 <div class="sidebar-section">
                     <h4 class="sub-title" data-i18n="marketSettings">PAZAR AYARLARI</h4>
                     <div class="setting-row">
@@ -142,16 +139,11 @@
                         <input type="checkbox" id="use-focus">
                     </div>
                 </div>
-
                 <div class="sidebar-section">
                     <h4 class="sub-title" data-i18n="cityLocation">ŞEHİR / LOKASYON</h4>
                     <div class="city-list" id="city-list"></div>
                 </div>
-
-
             </aside>
-
-            <!-- Main Table -->
             <main class="table-container">
                 <table class="craft-table">
                     <thead>
@@ -183,8 +175,6 @@
                 </table>
             </main>
         </div>
-
-        <!-- Bottom Summary -->
         <footer class="bottom-summary">
             <div class="summary-box">
                 <div class="label" data-i18n="totalCost">TOPLAM MALİYET</div>
@@ -215,8 +205,7 @@
             <div class="panel-header">
                 <div class="panel-title-group">
                     <h2 class="panel-title" data-i18n="avalonTitle">🗺️ Avalon Yolları — Keşif</h2>
-                    <p class="panel-subtitle" data-i18n="avalonSubtitle">322 Avalon haritasının kaynak ve sandık
-                        bilgileri</p>
+                    <p class="panel-subtitle" data-i18n="avalonSubtitle">322 Avalon haritasının kaynak ve sandık bilgileri</p>
                 </div>
                 <div class="panel-controls">
                     <div class="search-box" style="width:220px">
@@ -233,14 +222,12 @@
                     </div>
                 </div>
             </div>
-
             <div class="avalon-legend">
                 <span class="chest-badge green">🟢 Küçük (Solo)</span>
                 <span class="chest-badge blue">🔵 Orta (Grup)</span>
                 <span class="chest-badge yellow">🟡 Büyük (Raid)</span>
                 <span class="chest-badge purple">🟣 Eski Güç</span>
             </div>
-
             <div class="table-container" style="flex:1; margin:0;">
                 <table class="craft-table avalon-table">
                     <thead>
@@ -256,8 +243,6 @@
                 </table>
             </div>
         </div>
-
-        <!-- Avalon Map Modal -->
         <div class="modal-overlay" id="avalon-modal">
             <div class="modal-box">
                 <div class="modal-header">
@@ -269,49 +254,21 @@
         </div>
     </div>
 
-    <!-- ==================== KILLBOARD TAB ==================== -->
-    <div id="tab-killboard" class="tab-content">
-        <div class="generic-panel">
-            <div class="panel-header">
-                <div class="panel-title-group">
-                    <h2 class="panel-title" data-i18n="killboardTitle">💀 KillBoard</h2>
-                    <p class="panel-subtitle" data-i18n="killboardSubtitle">Son öldürme ve ölüm kayıtları</p>
-                </div>
-                <div class="panel-controls">
-                    <div class="search-box" style="width:250px">
-                        <span>🔍</span>
-                        <input type="text" id="kb-player-search" placeholder="Oyuncu veya Guild ara...">
-                    </div>
-                    <button class="btn-fetch" onclick="loadKillboard()">⟳ <span
-                            data-i18n="btnRefresh">Yenile</span></button>
-                </div>
-            </div>
-            <div class="killboard-container" id="killboard-container">
-                <div class="empty-state">
-                    <span>💀</span>
-                    <p data-i18n="killboardEmpty">Yüklemek için Yenile'ye tıklayın veya bir oyuncu arayın.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- KillBoard sekmesi kaldırıldı -->
 
     <!-- ==================== MARKET ANALYSIS TAB ==================== -->
     <div id="tab-market" class="tab-content">
         <div class="generic-panel">
             <div class="panel-header">
                 <div class="panel-title-group">
-                    <h2 class="panel-title" data-i18n="marketTitle">📊 Pazar Analizi</h2>
-                    <p class="panel-subtitle" data-i18n="marketSubtitle">Eşya fiyat geçmişi ve pazar trendi — Albion
-                        Data Project</p>
+                    <h2 class="panel-title" data-i18n="marketTitle">📊 Pazar Analizi - Sınıf Sistemi</h2>
+                    <p class="panel-subtitle" data-i18n="marketSubtitle">Albion Online sınıf sistemine göre gruplandırılmış eşya analizi</p>
                 </div>
                 <div class="panel-controls">
-                    <div class="search-wrapper">
-                        <div class="search-box" style="width:280px">
-                            <span>🔍</span>
-                            <input type="text" id="market-item-search" placeholder="Eşya ara (örn: Clarent Blade)"
-                                autocomplete="off">
-                        </div>
-                        <div class="search-dropdown" id="market-search-dropdown"></div>
+                    <div class="search-box" style="width:250px">
+                        <span>🔍</span>
+                        <input type="text" id="class-item-search" placeholder="Eşya ara..." data-i18n-placeholder="searchItems">
+                        <div class="search-dropdown" id="class-search-dropdown"></div>
                     </div>
                     <select id="market-city">
                         <option value="Caerleon">Caerleon</option>
@@ -321,19 +278,27 @@
                         <option value="Martlock">Martlock</option>
                         <option value="Thetford">Thetford</option>
                         <option value="Brecilien">Brecilien</option>
-                        <option value="Caerleon,Bridgewatch,FortSterling,Lymhurst,Martlock,Thetford">Tüm Şehirler
-                        </option>
+                        <option value="Caerleon,Bridgewatch,FortSterling,Lymhurst,Martlock,Thetford">Tüm Şehirler</option>
                     </select>
                     <div class="toggle-group" id="market-period">
                         <button class="active" data-val="daily">Günlük</button>
                         <button data-val="weekly">Haftalık</button>
                         <button data-val="monthly">Aylık</button>
                     </div>
-                    <button class="btn-fetch" onclick="loadMarketData()">⟳ <span
-                            data-i18n="btnRefresh">Güncelle</span></button>
+                    <button class="btn-fetch" onclick="loadMarketData()">⟳ <span data-i18n="btnRefresh">Güncelle</span></button>
                 </div>
             </div>
-
+            
+            <!-- Sınıf Seçimi -->
+            <div class="class-selection" id="class-selection" style="display:flex; gap:10px; margin:20px 0; flex-wrap:wrap;">
+                <!-- Sınıf butonları JavaScript ile oluşturulacak -->
+            </div>
+            
+            <!-- Kategori Seçimi -->
+            <div class="category-selection" id="category-selection" style="display:flex; gap:10px; margin:20px 0; flex-wrap:wrap;">
+                <!-- Kategori butonları JavaScript ile oluşturulacak -->
+            </div>
+            
             <div class="market-body" id="market-body">
                 <div class="market-item-info" id="market-item-info" style="display:none">
                     <img id="market-item-icon" src="" alt="" width="64" height="64">
@@ -347,7 +312,16 @@
                     <canvas id="market-chart"></canvas>
                 </div>
                 <div class="market-city-table" id="market-city-table"></div>
-                <div class="empty-state" id="market-empty">
+                
+                <!-- Sınıf Eşyaları Container -->
+                <div class="class-items-container" id="class-items-container" style="max-height:600px; overflow-y:auto;">
+                    <div class="empty-state">
+                        <span>⚔️</span>
+                        <p>Analiz etmek için bir sınıf seçin.</p>
+                    </div>
+                </div>
+                
+                <div class="empty-state" id="market-empty" style="display:none">
                     <span>📊</span>
                     <p data-i18n="marketEmpty">Analiz etmek için bir eşya arayın.</p>
                 </div>
@@ -364,40 +338,17 @@
                     <p class="panel-subtitle" data-i18n="goldSubtitle">Gold ↔ Silver dönüşüm oranı ve geçmiş grafik</p>
                 </div>
                 <div class="panel-controls">
-                    <select id="gold-server">
-                        <option value="west">Amerika (West)</option>
-                        <option value="east">Asya (East)</option>
-                        <option value="europe">Avrupa (Europe)</option>
-                    </select>
                     <div class="toggle-group" id="gold-period">
-                        <button class="active" data-val="7">7 Gün</button>
-                        <button data-val="30">30 Gün</button>
-                        <button data-val="90">90 Gün</button>
+                        <button class="active" data-val="7d">7 Gün</button>
+                        <button data-val="30d">30 Gün</button>
+                        <button data-val="90d">90 Gün</button>
                     </div>
-                    <button class="btn-fetch" onclick="loadGoldPrice()">⟳ <span
-                            data-i18n="btnRefresh">Güncelle</span></button>
+                    <button class="btn-fetch" onclick="loadGoldData('7d')">⟳ <span data-i18n="btnRefresh">Güncelle</span></button>
                 </div>
             </div>
             <div class="gold-body">
                 <div class="gold-stats" id="gold-stats">
-                    <div class="gold-stat-card">
-                        <div class="stat-label">Güncel Fiyat</div>
-                        <div class="stat-value" id="gold-current">—</div>
-                        <div class="stat-sub">Silver / Gold</div>
-                    </div>
-                    <div class="gold-stat-card">
-                        <div class="stat-label">7 Günlük Ort.</div>
-                        <div class="stat-value" id="gold-avg7">—</div>
-                    </div>
-                    <div class="gold-stat-card">
-                        <div class="stat-label">30 Günlük Ort.</div>
-                        <div class="stat-value" id="gold-avg30">—</div>
-                    </div>
-                    <div class="gold-stat-card">
-                        <div class="stat-label">Premium Maliyeti</div>
-                        <div class="stat-value" id="gold-premium">—</div>
-                        <div class="stat-sub">2,160 Gold = 30 Gün</div>
-                    </div>
+                    <!-- Stats JavaScript ile doldurulacak -->
                 </div>
                 <div class="chart-container">
                     <canvas id="gold-chart"></canvas>
@@ -437,10 +388,7 @@
                     </div>
                 </div>
             </div>
-
             <div class="builds-content-info" id="builds-content-info"></div>
-
-            <!-- Builds Table header like reference images -->
             <div class="builds-table-wrap">
                 <table class="craft-table builds-table">
                     <thead>
@@ -461,13 +409,11 @@
                     <tbody id="builds-tbody"></tbody>
                 </table>
             </div>
-
             <div class="builds-legend">
                 <span><span class="dot-green">●</span> Kolay</span>
                 <span><span class="dot-yellow">●</span> Orta</span>
                 <span><span class="dot-red">●</span> Zor</span>
-                <span style="color:var(--text-muted); font-size:11px">* Görseller Albion Online API'sinden
-                    çekilmektedir</span>
+                <span style="color:var(--text-muted); font-size:11px">* Görseller Albion Online API'sinden çekilmektedir</span>
             </div>
         </div>
     </div>
@@ -476,20 +422,14 @@
     <div id="tab-settings" class="tab-content">
         <div class="generic-panel settings-panel">
             <h2 class="panel-title" data-i18n="settingsTitle">⚙️ Ayarlar</h2>
-
-            <!-- Language -->
             <div class="settings-section">
                 <h3 class="settings-section-title" data-i18n="settingsLang">🌐 Dil / Language</h3>
                 <div class="lang-grid" id="lang-grid"></div>
             </div>
-
-            <!-- Themes -->
             <div class="settings-section">
                 <h3 class="settings-section-title" data-i18n="settingsTheme">🎨 Tema</h3>
                 <div class="theme-grid" id="theme-grid"></div>
             </div>
-
-            <!-- Server -->
             <div class="settings-section">
                 <h3 class="settings-section-title" data-i18n="settingsServer">🌍 Sunucu</h3>
                 <div class="toggle-group" id="server-toggle">
@@ -498,8 +438,6 @@
                     <button data-val="europe" onclick="setServer('europe')">🌍 Avrupa (Europe)</button>
                 </div>
             </div>
-
-            <!-- Craft Defaults -->
             <div class="settings-section">
                 <h3 class="settings-section-title" data-i18n="settingsCraftDefaults">🔨 Craft Varsayılanları</h3>
                 <div class="settings-grid">
@@ -512,11 +450,8 @@
                         <input type="number" id="s-bonus-premium" value="15.2" step="0.1">
                     </div>
                 </div>
-                <button class="btn-fetch" style="margin-top:12px" onclick="applyDefaultSettings()"
-                    data-i18n="btnApply">Uygula</button>
+                <button class="btn-fetch" style="margin-top:12px" onclick="applyDefaultSettings()" data-i18n="btnApply">Uygula</button>
             </div>
-
-            <!-- About & Update -->
             <div class="settings-section">
                 <h3 class="settings-section-title" data-i18n="settingsAbout">📋 Hakkında & Güncelleme</h3>
                 <div class="about-box">
@@ -553,14 +488,26 @@
         </div>
     </div>
 
-    <script src="js/api.js"></script>
-    <script src="js/i18n.js"></script>
-    <script src="js/settings.js"></script>
-    <script src="js/avalon.js"></script>
-    <script src="js/killboard.js"></script>
-    <script src="js/market.js"></script>
-    <script src="js/builds.js"></script>
-    <script src="js/app.js"></script>
+    <script src="js/api.js" defer></script>
+    <script src="js/i18n.js" defer></script>
+    <script src="js/settings.js" defer></script>
+    <script src="js/avalon.js" defer></script>
+    <script src="js/market-class.js" defer></script>
+<script src="js/gold-price.js" defer></script>
+    <script src="js/builds.js" defer></script>
+    <script src="js/app-fixes.js" defer></script>
+    <script src="js/advanced-filters.js" defer></script>
+    <script src="js/guild-wars.js" defer></script>
+    <script src="js/territory-map.js" defer></script>
+    <script src="js/battle-analytics.js" defer></script>
+    <script src="js/player-rankings.js" defer></script>
+    <script src="js/resource-market.js" defer></script>
+    <script src="js/loot-calculator.js" defer></script>
+    <script src="js/enchantment-roi.js" defer></script>
+    <script src="js/realtime-updates.js" defer></script>
+    <script src="js/export-features.js" defer></script>
+    <script src="js/pwa-installer.js" defer></script>
+    <script src="js/app.js" defer></script>
 </body>
 
 </html>

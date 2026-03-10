@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.env
+.env.local
+.DS_Store
+*.swp
+*.swo
+*~
+.idea
+.vscode
+dist
+build
+out
+.electron-gyp
