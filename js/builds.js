@@ -154,102 +154,102 @@ const BUILDS_DB = {
     },
     group_dungeon_4: {
         title: '👥 Grup Dungeon (4 Kişi)', minPlayers: 4, maxPlayers: 4,
-        description: '4 kişilik grup içerikleri. 1 tank, 1 healer, 2 DPS kompozisyonu önerilir.',
+        description: '4 kişilik hızlı zindan partisi (HCE veya Açık Dünya). Hızlı temizleme üzerine kurulu.',
         roles: [
             {
-                role: 'Ana Tank', difficulty: 'medium',
-                weapon: ITEMS.IRON_BREAKER, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.HELMET_PLATE_DW,
-                armor: ITEMS.REINFORCED_CHEST, boots: ITEMS.BOOTS_PLATE_DW,
-                cape: ITEMS.MARTLOCK_CAPE, food: ITEMS.BREAD, potion: ITEMS.MAJOR_RESISTANCE,
-                skills: SKILL('Taunt Charge', 'Empowered Slam', 'Magnetic Zone', 'Wall of Blades', 'Toughness', 'Gruba doğru E → W → Q zinciri'),
-                swaps: [ITEMS.CLARENT, ITEMS.OATHKEEPERS]
+                role: 'Ana Tank (Demir Gürz)', difficulty: 'medium',
+                weapon: 'T8_MAIN_MACE', offhand: 'T8_OFF_SHIELD_KEEPER', helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_PLATE_SET1', boots: 'T8_SHOES_PLATE_SET1',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_SANDWICH@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Defensive Slam', 'Snare Charge', 'Deep Leap', 'Wall of Blades', 'Toughness', 'Önden atla ve canavarları bir araya sıkıştır.'),
+                swaps: ['T8_2H_MACE_MORGANA', 'T8_MAIN_MACE_HELL']
             },
             {
-                role: 'Şifacı (Kutsal Hazan)', difficulty: 'easy',
-                weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
-                armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
-                cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
-                skills: SKILL('Radiant Orb', 'Summon Undead Cart', 'Holy Nova', 'Divine Intervention', 'Martyr', 'E → W arkaplana → R düşükte'),
-                swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE]
+                role: 'Ana Şifacı (Kutsal Asası)', difficulty: 'easy',
+                weapon: 'T8_MAIN_HOLYSTAFF', offhand: 'T8_OFF_ORB_MORGANA', helmet: 'T8_HEAD_CLOTH_SET1',
+                armor: 'T8_ARMOR_CLOTH_SET1', boots: 'T8_SHOES_CLOTH_SET2',
+                cape: 'T8_CAPEITEM_FW_LYMHURST', food: 'T8_MEAL_PIE@1', potion: 'T8_POTION_ENERGY@1',
+                skills: SKILL('Generous Heal', 'Holy Beam', 'Holy Explosion', null, 'Adrenaline Driven', 'Ön saftaki tanka kesintisiz can ver.'),
+                swaps: ['T8_MAIN_HOLYSTAFF_AVALON', 'T8_2H_HOLYSTAFF_HELL']
             },
             {
-                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
-                weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
-                armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
-                cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Cursed Sickle', 'Inner Fire', 'Desecrate', 'Hellfire Hands', 'Black Hands', 'E → Q×3 → W → R (Bossa)'),
-                swaps: [ITEMS.WEEPING, ITEMS.CARRIONCALLER]
+                role: 'Alan Menzilli Hasarı (Ağlayan Arbalet)', difficulty: 'easy',
+                weapon: 'T8_2H_CROSSBOW_HELL', offhand: null, helmet: 'T8_HEAD_CLOTH_SET1',
+                armor: 'T8_ARMOR_CLOTH_ROYAL', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_CAERLEON', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Explosive Bolt', 'Caltrops', 'Explosive Mine', null, 'Well-Prepared', 'Tank canavarları topladığında Mayın (E) atıp üstüne Q ile patlat.'),
+                swaps: ['T8_MAIN_CROSSBOW']
             },
             {
-                role: 'Hasar (Kırağı Asası)', difficulty: 'medium',
-                weapon: ITEMS.CHILLHOWL, offhand: null, helmet: ITEMS.MAGE_COWL,
-                armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
-                cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Shatter Lance', 'Frost Nova', 'Avalanche', null, 'Battle Frenzy', 'Q dolu → E yığ → W frost nova'),
-                swaps: [ITEMS.WARCALLER, ITEMS.BLAZING]
-            },
+                role: 'Alan Menzilli Hasarı (Ateş Asası)', difficulty: 'medium',
+                weapon: 'T8_2H_FIRESTAFF_HELL', offhand: null, helmet: 'T8_HEAD_CLOTH_SET2',
+                armor: 'T8_ARMOR_CLOTH_SET1', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_FORTSTERLING', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Fire Bolt', 'Wall of Flames', 'Flame Pillar', null, 'Aggressive Caster', 'Düşmanların altına lav sütunları (E) atarak ani hasar çıkar.'),
+                swaps: ['T8_MAIN_FIRESTAFF']
+            }
         ]
     },
     group_dungeon_7: {
         title: '👥 Grup Dungeon (7 Kişi)', minPlayers: 7, maxPlayers: 7,
-        description: '7 kişilik grup içerikleri. 1-2 tank, 1-2 healer, 3-4 DPS önerilir.',
+        description: '7 kişilik grup zindanları (PvE). Hızlı temizleme (Clear) ve boss kesme (Bossing) ağırlıklı roller.',
         roles: [
             {
-                role: 'Ana Tank', difficulty: 'medium',
-                weapon: ITEMS.IRON_BREAKER, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.HELMET_PLATE_DW,
-                armor: ITEMS.REINFORCED_CHEST, boots: ITEMS.GUARDIAN_BOOTS,
-                cape: ITEMS.MARTLOCK_CAPE, food: ITEMS.BREAD, potion: ITEMS.MAJOR_RESISTANCE,
-                skills: SKILL('Taunt Charge', 'Empowered Slam', 'Magnetic Zone', 'Wall of Blades', 'Toughness', ''),
-                swaps: [ITEMS.CLARENT, ITEMS.OATHKEEPERS]
+                role: 'Ana Tank (Incubus)', difficulty: 'medium',
+                weapon: 'T8_MAIN_MACE_HELL', offhand: 'T8_OFF_SHIELD_KEEPER', helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_PLATE_SET1', boots: 'T8_SHOES_PLATE_SET1',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_SANDWICH@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Defensive Slam', 'Snare Charge', 'Shrinking Curse', 'Wall of Blades', 'Toughness', 'Yaratıkları topla ve E yeteneğiyle canavarları küçült/zayıflat.'),
+                swaps: ['T8_MAIN_MACE']
             },
             {
-                role: 'İkincil Tank', difficulty: 'medium',
-                weapon: ITEMS.CLARENT, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.SOLDIER_HELMET,
-                armor: ITEMS.GUARD_ARMOR, boots: ITEMS.SOLDIER_BOOTS,
-                cape: ITEMS.FORT_CAPE, food: ITEMS.BREAD, potion: ITEMS.GIANT_STRENGTH,
-                skills: SKILL('Heroic Cleave', 'Blade AoE', 'Energetic', null, 'Defiant', 'Tankın arkasında durup hasar al'),
-                swaps: [ITEMS.SPIRITHUNTER, ITEMS.REALMBREAKER]
+                role: 'Destek/İkincil Tank (Arkana)', difficulty: 'medium',
+                weapon: 'T8_2H_ARCANESTAFF', offhand: null, helmet: 'T8_HEAD_LEATHER_SET1',
+                armor: 'T8_ARMOR_PLATE_ROYAL', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_OMELETTE@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Chain Missile', 'Enigma Blade', 'Time Freeze', null, 'Arcane Mastery', 'Zamanı durdurarak (E) tankın hasar almasını engelle.'),
+                swaps: ['T8_2H_ARCANESTAFF_HELL']
             },
             {
-                role: 'Ana Şifacı', difficulty: 'easy',
-                weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
-                armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
-                cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
-                skills: SKILL('Radiant Orb', 'Summon Undead Cart', 'Holy Nova', 'Divine Intervention', 'Martyr', ''),
-                swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE]
+                role: 'Ana Şifacı (Kutsal Asası)', difficulty: 'easy',
+                weapon: 'T8_MAIN_HOLYSTAFF', offhand: 'T8_OFF_ORB_MORGANA', helmet: 'T8_HEAD_CLOTH_SET1',
+                armor: 'T8_ARMOR_CLOTH_SET1', boots: 'T8_SHOES_CLOTH_SET2',
+                cape: 'T8_CAPEITEM_FW_LYMHURST', food: 'T8_MEAL_PIE@1', potion: 'T8_POTION_ENERGY@1',
+                skills: SKILL('Generous Heal', 'Holy Beam', 'Holy Explosion', null, 'Adrenaline Driven', 'Ön saftaki tanka sürekli Can Işını (W) uygula.'),
+                swaps: ['T8_MAIN_HOLYSTAFF_AVALON', 'T8_2H_HOLYSTAFF_HELL']
             },
             {
-                role: 'Destek (Büyük Arkana)', difficulty: 'medium',
-                weapon: ITEMS.GREATARCANE, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
-                armor: ITEMS.ROBE_OF_PROT, boots: ITEMS.BOOTS_CLOTH_DW,
-                cape: ITEMS.CAERLEON_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
-                skills: SKILL('Arcane Eye', 'Enfeeble Aura', 'Arcane Orb', null, 'Arcane Mastery', 'E buff + W debuff → Q zinciri'),
-                swaps: [ITEMS.LIFETOUCH, ITEMS.MISTCALLER]
+                role: 'Zırh Kırıcı (Gölgegetiren)', difficulty: 'hard',
+                weapon: 'T8_MAIN_CURSEDSTAFF_AVALON', offhand: 'T8_OFF_ORB_MORGANA', helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_CLOTH_KEEPER', boots: 'T8_SHOES_CLOTH_SET2',
+                cape: 'T8_CAPEITEM_FW_CAERLEON', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Cursed Sickle', 'Armor Piercer', 'Inner Fire', null, 'Furious', 'Bossların zırhını Armur Piercer (W) ile sürekli kırık tut.'),
+                swaps: ['T8_2H_CURSEDSTAFF_HELL']
             },
             {
-                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
-                weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
-                armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
-                cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Cursed Sickle', 'Inner Fire', 'Desecrate', 'Hellfire Hands', 'Black Hands', ''),
-                swaps: [ITEMS.WEEPING, ITEMS.CARRIONCALLER]
+                role: 'Alan Hasarı (Ağlayan Arbalet)', difficulty: 'easy',
+                weapon: 'T8_2H_CROSSBOW_HELL', offhand: null, helmet: 'T8_HEAD_CLOTH_SET1',
+                armor: 'T8_ARMOR_CLOTH_ROYAL', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_CAERLEON', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Explosive Bolt', 'Caltrops', 'Explosive Mine', null, 'Well-Prepared', 'Tank canavarları topladığında Mayın (E) atıp üstüne Q ile patlat.'),
+                swaps: ['T8_MAIN_CROSSBOW']
             },
             {
-                role: 'Hasar (Kırağı Asası)', difficulty: 'medium',
-                weapon: ITEMS.CHILLHOWL, offhand: null, helmet: ITEMS.MAGE_COWL,
-                armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
-                cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Shatter Lance', 'Frost Nova', 'Avalanche', null, 'Battle Frenzy', ''),
-                swaps: [ITEMS.WARCALLER, ITEMS.BLAZING]
+                role: 'Alan Menzilli Hasarı (Buzul Asası)', difficulty: 'medium',
+                weapon: 'T8_2H_ICEGAUNTLETS_HELL', offhand: null, helmet: 'T8_HEAD_LEATHER_SET1',
+                armor: 'T8_ARMOR_CLOTH_SET2', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_CAERLEON', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Ice Shard', 'Frost Nova', 'Ice Storm', null, 'Aggressive Caster', 'Büyük canavar gruplarına Q ile sürekli hasar (Spam) uygula.'),
+                swaps: ['T8_MAIN_FROSTSTAFF_KEEPER']
             },
             {
-                role: 'Hasar (Hafif Arbalet)', difficulty: 'easy',
-                weapon: ITEMS.LIGHT_CROSSBOW, offhand: null, helmet: ITEMS.HUNTER_HOOD,
-                armor: ITEMS.KNIGHT_ARMOR, boots: ITEMS.HUNTER_SHOES,
-                cape: ITEMS.THETFORD_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Bolt', 'Explosive Bolt', 'Snipe', 'Energy Shield', 'Veteran', 'W → Q×3 → E max range'),
-                swaps: [ITEMS.BOLTCASTER, ITEMS.BOW_BADON]
-            },
+                role: 'Sürekli Hasar (Ateş Asası)', difficulty: 'easy',
+                weapon: 'T8_2H_FIRESTAFF_HELL', offhand: null, helmet: 'T8_HEAD_CLOTH_SET2',
+                armor: 'T8_ARMOR_CLOTH_SET1', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_FORTSTERLING', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Fire Bolt', 'Wall of Flames', 'Flame Pillar', null, 'Aggressive Caster', 'Menzilli büyük alan hasarları(E) çıkar.'),
+                swaps: ['T8_MAIN_FIRESTAFF']
+            }
         ]
     },
     avalon_dungeon: {
@@ -499,33 +499,57 @@ const BUILDS_DB = {
         ]
     },
     static: {
-        title: '🏰 Statik', minPlayers: 5, maxPlayers: 7,
-        description: 'Statik dungeon içerikleri. Düzenli grup ile tekrarlanan dungeon temizleme.',
+        title: '🏰 Statik Zindan (Dive / Fame)', minPlayers: 5, maxPlayers: 7,
+        description: 'Statik zindanlarda sürekli alan hasarına (Fame) ve olası düşman baskınlarına (PvP Dive) karşı hazırlıklı setler.',
         roles: [
             {
-                role: 'Tank', difficulty: 'medium',
-                weapon: ITEMS.IRON_BREAKER, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.HELMET_PLATE_DW,
-                armor: ITEMS.REINFORCED_CHEST, boots: ITEMS.GUARDIAN_BOOTS,
-                cape: ITEMS.MARTLOCK_CAPE, food: ITEMS.BREAD, potion: ITEMS.MAJOR_RESISTANCE,
-                skills: SKILL('Taunt Charge', 'Empowered Slam', 'Magnetic Zone', 'Wall of Blades', 'Toughness', ''),
-                swaps: [ITEMS.CLARENT, ITEMS.OATHKEEPERS]
+                role: 'Ana Tank (Demir Gürz)', difficulty: 'medium',
+                weapon: 'T8_MAIN_MACE', offhand: 'T8_OFF_SHIELD_KEEPER', helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_PLATE_SET1', boots: 'T8_SHOES_PLATE_SET1',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_SANDWICH@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Defensive Slam', 'Snare Charge', 'Deep Leap', 'Wall of Blades', 'Toughness', 'Statik canavarlarını bir araya toplayıp sersemlet (E).'),
+                swaps: ['T8_2H_MACE_MORGANA']
             },
             {
-                role: 'Şifacı', difficulty: 'easy',
-                weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
-                armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
-                cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
-                skills: SKILL('Radiant Orb', 'Undead Cart', 'Holy Nova', 'Divine Intervention', 'Martyr', ''),
-                swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE]
+                role: 'Ana Şifacı (Kutsal Asası)', difficulty: 'easy',
+                weapon: 'T8_MAIN_HOLYSTAFF', offhand: 'T8_OFF_ORB_MORGANA', helmet: 'T8_HEAD_CLOTH_SET2',
+                armor: 'T8_ARMOR_CLOTH_SET1', boots: 'T8_SHOES_CLOTH_SET2',
+                cape: 'T8_CAPEITEM_FW_LYMHURST', food: 'T8_MEAL_PIE@1', potion: 'T8_POTION_ENERGY@1',
+                skills: SKILL('Generous Heal', 'Holy Beam', 'Holy Explosion', null, 'Adrenaline Driven', 'Ön saftaki tanka kesintisiz can ver.'),
+                swaps: ['T8_MAIN_HOLYSTAFF_AVALON']
             },
             {
-                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
-                weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
-                armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
-                cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Cursed Sickle', 'Inner Fire', 'Desecrate', 'Hellfire Hands', 'Black Hands', ''),
-                swaps: [ITEMS.WEEPING, ITEMS.CARRIONCALLER]
+                role: 'Hasar / Zırh Delici (Realmbreaker)', difficulty: 'hard',
+                weapon: 'T8_2H_AXE_HELL', offhand: null, helmet: 'T8_HEAD_LEATHER_SET1',
+                armor: 'T8_ARMOR_LEATHER_ROYAL', boots: 'T8_SHOES_PLATE_SET2',
+                cape: 'T8_CAPEITEM_FW_CAERLEON', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Rending Strike', 'Internal Bleeding', 'Aftershock', null, 'Deep Cuts', 'Tankın üzerine sıçrayıp hedeflerin Maks HP değerini düşürür.'),
+                swaps: ['T8_MAIN_AXE']
             },
+            {
+                role: 'Sabit Hasar (Hafif Arbalet)', difficulty: 'easy',
+                weapon: 'T8_MAIN_CROSSBOW', offhand: 'T8_OFF_ORB_MORGANA', helmet: 'T8_HEAD_LEATHER_SET2',
+                armor: 'T8_ARMOR_CLOTH_ROYAL', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_CAERLEON', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Auto Fire', 'Sunder Earth', 'Explosive Bolt', null, 'Well-Prepared', 'Boslara ve gruplara yüksek, hızlı Q hasarı cıkar.'),
+                swaps: ['T8_2H_CROSSBOW_HELL']
+            },
+            {
+                role: 'Menzilli Destek Hasarı (Doğa Asası)', difficulty: 'medium',
+                weapon: 'T8_MAIN_NATURESTAFF_KEEPER', offhand: 'T8_OFF_CENSER_AVALON', helmet: 'T8_HEAD_CLOTH_SET1',
+                armor: 'T8_ARMOR_CLOTH_KEEPER', boots: 'T8_SHOES_LEATHER_SET1',
+                cape: 'T8_CAPEITEM_FW_LYMHURST', food: 'T8_MEAL_OMELETTE@1', potion: 'T8_POTION_ENERGY@1',
+                skills: SKILL('Thorns', 'Revitalize', 'Circle of Life', null, 'Calm', 'Menzilli saldırılarla canavarları tankla beraber erit ve ikincil şifa ver.'),
+                swaps: ['T8_2H_NATURESTAFF_HELL']
+            },
+            {
+                role: 'Büyü Hasarı (Gölgegetiren)', difficulty: 'hard',
+                weapon: 'T8_MAIN_CURSEDSTAFF_AVALON', offhand: 'T8_OFF_ORB_MORGANA', helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_CLOTH_KEEPER', boots: 'T8_SHOES_CLOTH_SET2',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Cursed Sickle', 'Armor Piercer', 'Inner Fire', null, 'Furious', 'Zindan bosslarına zırh delme desteği sağlayıp sürekli hasar bırakır.'),
+                swaps: ['T8_2H_CURSEDSTAFF_HELL']
+            }
         ]
     },
     group_camp: {
@@ -551,95 +575,159 @@ const BUILDS_DB = {
         ]
     },
     zvz_20: {
-        title: '⚔️ ZvZ — 20+ Kişi', minPlayers: 20, maxPlayers: 100,
-        description: 'Büyük ölçekli ZvZ savaşları. Özel ZvZ silahları ve koordineli roller.',
+        title: '⚔️ ZvZ (Büyük Savaş)', minPlayers: 20, maxPlayers: 100,
+        description: 'Büyük ölçekli birlik savaşları (ZvZ). Çakışmaları yönetecek çok güçlü kitle kontrol ve ordu koruma yetenekleri içerir.',
         roles: [
             {
-                role: 'İkincil Tank / Susturucu', difficulty: 'hard',
-                weapon: ITEMS.CLARENT, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.SOLDIER_HELMET,
-                armor: ITEMS.GUARD_ARMOR, boots: ITEMS.SOLDIER_BOOTS,
-                cape: ITEMS.CAERLEON_CAPE, food: ITEMS.BREAD, potion: ITEMS.GIANT_STRENGTH,
-                skills: SKILL('Heroic Cleave', 'Blade AoE', 'Energetic', null, 'Defiant', 'Düşman healeri sustur → tank yaklaş'),
-                swaps: [ITEMS.SPIRITHUNTER, ITEMS.REALMBREAKER, ITEMS.IRON_BREAKER]
+                role: 'Ana Tank (Topuz)', difficulty: 'medium',
+                weapon: 'T8_MAIN_MACE', offhand: 'T8_OFF_SHIELD_KEEPER', helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_PLATE_SET1', boots: 'T8_SHOES_PLATE_SET1',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_SANDWICH@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Defensive Slam', 'Snare Charge', 'Deep Leap', 'Wall of Blades', 'Toughness', 'Düşman ordusuna önden atla ve kitle kontrol uygula.'),
+                swaps: ['T8_2H_MACE_MORGANA']
             },
             {
-                role: 'Destek (Büyük Arkana)', difficulty: 'medium',
-                weapon: ITEMS.GREATARCANE, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
-                armor: ITEMS.ROBE_OF_PROT, boots: ITEMS.BOOTS_CLOTH_DW,
-                cape: ITEMS.CAERLEON_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
-                skills: SKILL('Arcane Eye', 'Enfeeble Aura', 'Arcane Orb', null, 'Arcane Mastery', 'E arkadaş buff → W düşman debuff'),
-                swaps: [ITEMS.LIFETOUCH, ITEMS.LYMHURST_ORB]
+                role: 'Alan Kesici Tank (Clarent Kılıcı / Camlann)', difficulty: 'hard',
+                weapon: 'T8_MAIN_SCIMITAR_MORGANA', offhand: 'T8_OFF_SHIELD_KEEPER', helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_PLATE_ROYAL', boots: 'T8_SHOES_PLATE_SET1',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_SANDWICH@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Heroic Cleave', 'Iron Will', 'Mighty Blow', null, 'Deep Cuts', 'Görünmezlikle düşmanın arka safına sızıp susturucuyu (Helmet) at.'),
+                swaps: ['T8_2H_MACE_MORGANA']
             },
             {
-                role: 'Ana Şifacı', difficulty: 'easy',
-                weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
-                armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
-                cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
-                skills: SKILL('Radiant Orb', 'Undead Cart', 'Holy Nova', 'Divine Intervention', 'Martyr', ''),
-                swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE, ITEMS.LIGHTCALLER]
+                role: 'Destek/Kargaşa (Locus Arkana)', difficulty: 'hard',
+                weapon: 'T8_2H_ARCANESTAFF_HELL', offhand: null, helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_PLATE_ROYAL', boots: 'T8_SHOES_CLOTH_SET2',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_OMELETTE@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Chain Missile', 'Enigma Blade', 'Void', null, 'Arcane Mastery', 'Düşman bombacıları girince Void (E) aç ve alanlarını temizle.'),
+                swaps: ['T8_2H_ARCANESTAFF']
             },
             {
-                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
-                weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
-                armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
-                cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Cursed Sickle', 'Inner Fire', 'Desecrate', 'Hellfire Hands', 'Black Hands', 'Komutanı vur → E × spam'),
-                swaps: [ITEMS.WEEPING, ITEMS.LIGHT_CROSSBOW, ITEMS.CARRIONCALLER]
+                role: 'Alan Hasarı (Buzul Asası)', difficulty: 'medium',
+                weapon: 'T8_2H_ICEGAUNTLETS_HELL', offhand: null, helmet: 'T8_HEAD_LEATHER_SET1',
+                armor: 'T8_ARMOR_CLOTH_SET2', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_FORTSTERLING', food: 'T8_MEAL_OMELETTE@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Ice Shard', 'Frost Nova', 'Ice Storm', null, 'Aggressive Caster', 'Ordu karşı karşıya gelince ön saflara Buz Fırtınası(E) yağdır.'),
+                swaps: ['T8_MAIN_FROSTSTAFF_KEEPER']
             },
             {
-                role: 'Destek (Demirkökü)', difficulty: 'medium',
-                weapon: ITEMS.LIGHTCALLER, offhand: null, helmet: ITEMS.COWL_CLOTH,
-                armor: ITEMS.ROBE_OF_PROT, boots: ITEMS.BOOTS_CLOTH_DW,
-                cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
-                skills: SKILL('Rejuvenate', 'Ray of Light', 'Lights Embrace', null, 'Enlightenment', 'E W Q döngü → verimine bak'),
-                swaps: [ITEMS.IRONROOT, ITEMS.WILDSTAFF]
+                role: 'Alan Menzilli Hasarı (Ateş Şube / Cehennem)', difficulty: 'easy',
+                weapon: 'T8_2H_FIRESTAFF_HELL', offhand: null, helmet: 'T8_HEAD_CLOTH_SET2',
+                armor: 'T8_ARMOR_CLOTH_SET1', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_FORTSTERLING', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Fire Bolt', 'Wall of Flames', 'Flame Pillar', null, 'Aggressive Caster', 'Karşı atak yapan tankların geçişini Ateş Duvarı ile engelle.'),
+                swaps: ['T8_MAIN_FIRESTAFF_KEEPER']
             },
             {
-                role: 'Hasar (Kırağı Asası)', difficulty: 'medium',
-                weapon: ITEMS.CHILLHOWL, offhand: null, helmet: ITEMS.MAGE_COWL,
-                armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
-                cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Shatter Lance', 'Frost Nova', 'Avalanche', null, 'Battle Frenzy', ''),
-                swaps: [ITEMS.BLAZING, ITEMS.WARCALLER]
+                role: 'Yıkıcı Hasar Delici (Wailing Bow)', difficulty: 'medium',
+                weapon: 'T8_2H_BOW_KEEPER', offhand: null, helmet: 'T8_HEAD_CLOTH_SET1',
+                armor: 'T8_ARMOR_CLOTH_ROYAL', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_FORTSTERLING', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Multishot', 'Explosive Arrows', 'Demon Arrow', null, 'Piercing Arrows', 'Ön saflardaki çekişme esnasında W + E kombonu yapıp düşman ordusunu del.'),
+                swaps: ['T8_2H_BOW_HELL', 'T8_2H_CROSSBOW_HELL']
             },
+            {
+                role: 'Bitirici - Suikast (Realmbreaker / Kan Emici)', difficulty: 'hard',
+                weapon: 'T8_2H_AXE_HELL', offhand: null, helmet: 'T8_HEAD_LEATHER_SET1',
+                armor: 'T8_ARMOR_LEATHER_ROYAL', boots: 'T8_SHOES_PLATE_SET2',
+                cape: 'T8_CAPEITEM_FW_CAERLEON', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Rending Strike', 'Internal Bleeding', 'Aftershock', null, 'Deep Cuts', 'Callage atıldığı anda Tank ile birlikte gir ve rakip ordunun can kapasitesini sil.'),
+                swaps: ['T8_MAIN_DAGGER_HELL']
+            },
+            {
+                role: 'Grup Şifacısı (Yabani Asa / Düşmüş Asa)', difficulty: 'medium',
+                weapon: 'T8_MAIN_NATURESTAFF_KEEPER', offhand: 'T8_OFF_CENSER_AVALON', helmet: 'T8_HEAD_CLOTH_SET1',
+                armor: 'T8_ARMOR_CLOTH_KEEPER', boots: 'T8_SHOES_LEATHER_SET1',
+                cape: 'T8_CAPEITEM_FW_LYMHURST', food: 'T8_MEAL_OMELETTE@1', potion: 'T8_POTION_ENERGY@1',
+                skills: SKILL('Rejuvenation', 'Protection of Nature', 'Well of Life', null, 'Calm', 'Savaşta canı çok düşen veya alan hasarı yiyen ordu bloğuna hayat ağacı (E) aç.'),
+                swaps: ['T8_2H_HOLYSTAFF_HELL']
+            }
         ]
     },
     outpost: {
         title: '🏯 Outpost (10v10)', minPlayers: 10, maxPlayers: 10,
-        description: '10vs10 Outpost savaşları. Hızlı reaksiyon ve pozisyonlama kritik.',
+        description: '10vs10 Outpost savaşları. Hızlı çapraz tutuşlar ve büyük alan hasarına odaklanan meta.',
         roles: [
             {
-                role: 'Ana Tank', difficulty: 'medium',
-                weapon: ITEMS.IRON_BREAKER, offhand: ITEMS.SHIELD_ROYAL, helmet: ITEMS.HELMET_PLATE_DW,
-                armor: ITEMS.REINFORCED_CHEST, boots: ITEMS.GUARDIAN_BOOTS,
-                cape: ITEMS.MARTLOCK_CAPE, food: ITEMS.BREAD, potion: ITEMS.MAJOR_RESISTANCE,
-                skills: SKILL('Taunt Charge', 'Empowered Slam', 'Magnetic Zone', 'Wall of Blades', 'Toughness', 'Outpost kapısını tut'),
-                swaps: [ITEMS.CLARENT, ITEMS.SPIRITHUNTER, ITEMS.OATHKEEPERS]
+                role: 'Ana Tank (Kırıcı)', difficulty: 'medium',
+                weapon: 'T8_MAIN_MACE', offhand: 'T8_OFF_SHIELD_KEEPER', helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_PLATE_SET1', boots: 'T8_SHOES_PLATE_SET1',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_SANDWICH@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Taunt Charge', 'Snare Charge', 'Silencing Strike', 'Wall of Blades', 'Toughness', 'Önden gir, rakip healerları sustur ve yavaşlat.'),
+                swaps: ['T8_2H_MACE_MORGANA']
             },
             {
-                role: 'Şifacı', difficulty: 'easy',
-                weapon: ITEMS.HALLOWFALL, offhand: null, helmet: ITEMS.MAGE_COWL,
-                armor: ITEMS.CLERIC_ROBE, boots: ITEMS.SCHOLAR_SANDALS,
-                cape: ITEMS.LYMHURST_CAPE, food: ITEMS.PIE, potion: ITEMS.ENERGY_POTION,
-                skills: SKILL('Radiant Orb', 'Undead Cart', 'Holy Nova', 'Divine Intervention', 'Martyr', ''),
-                swaps: [ITEMS.GRAILSEEKER, ITEMS.DIVINE]
+                role: 'Ana Şifacı (Hallowfall)', difficulty: 'medium',
+                weapon: 'T8_MAIN_HOLYSTAFF_AVALON', offhand: 'T8_OFF_CENSER_AVALON', helmet: 'T8_HEAD_CLOTH_SET2',
+                armor: 'T8_ARMOR_CLOTH_SET1', boots: 'T8_SHOES_CLOTH_SET2',
+                cape: 'T8_CAPEITEM_FW_LYMHURST', food: 'T8_MEAL_PIE@1', potion: 'T8_POTION_ENERGY@1',
+                skills: SKILL('Generous Heal', 'Holy Orb', 'Divine Intervention', null, 'Adrenaline Driven', 'Ön saftaki tankı kurtar ve zıpla (E).'),
+                swaps: ['T8_MAIN_HOLYSTAFF']
             },
             {
-                role: 'Hasar (Gölgegetiren)', difficulty: 'hard',
-                weapon: ITEMS.SHADOWCALLER, offhand: ITEMS.EYE_OF_SECRETS, helmet: ITEMS.COWL_CLOTH,
-                armor: ITEMS.DRUID_ROBE, boots: ITEMS.CULTIST_SANDALS,
-                cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Cursed Sickle', 'Inner Fire', 'Desecrate', 'Hellfire Hands', 'Black Hands', ''),
-                swaps: [ITEMS.WEEPING, ITEMS.CARRIONCALLER]
+                role: 'Destek (Locus / Arkana)', difficulty: 'hard',
+                weapon: 'T8_2H_ARCANESTAFF_HELL', offhand: null, helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_PLATE_ROYAL', boots: 'T8_SHOES_CLOTH_SET2',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_OMELETTE@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Chain Missile', 'Enigma Blade', 'Void', null, 'Arcane Mastery', 'Düşman bufflarını temizle (E) ve saldırıyı hiç et.'),
+                swaps: ['T8_2H_ARCANESTAFF', 'T8_MAIN_ARCANESTAFF']
             },
             {
-                role: 'Hasar (Kırağı Asası)', difficulty: 'medium',
-                weapon: ITEMS.CHILLHOWL, offhand: null, helmet: ITEMS.MAGE_COWL,
-                armor: ITEMS.DRUID_ROBE, boots: ITEMS.BOOTS_CLOTH_DW,
-                cape: ITEMS.BRIDGEWATCH_CAPE, food: ITEMS.BEEF_STEW, potion: ITEMS.MAJOR_HEALING,
-                skills: SKILL('Shatter Lance', 'Frost Nova', 'Avalanche', null, 'Battle Frenzy', ''),
-                swaps: [ITEMS.BLAZING, ITEMS.WARCALLER]
+                role: 'Zırh Kırıcı Delici (Realmbreaker)', difficulty: 'medium',
+                weapon: 'T8_2H_AXE_HELL', offhand: null, helmet: 'T8_HEAD_LEATHER_SET1',
+                armor: 'T8_ARMOR_LEATHER_ROYAL', boots: 'T8_SHOES_PLATE_SET2',
+                cape: 'T8_CAPEITEM_FW_CAERLEON', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Rending Strike', 'Internal Bleeding', 'Aftershock', null, 'Deep Cuts', 'Ana tankın girdiği yere R+E atıp zırhları kır.'),
+                swaps: ['T8_2H_AXE', 'T8_2H_MACE_MORGANA']
             },
+            {
+                role: 'Büyük Alan Hasarı (Galatine Pair)', difficulty: 'hard',
+                weapon: 'T8_2H_DUALSWORD_MORGANA', offhand: null, helmet: 'T8_HEAD_CLOTH_SET1',
+                armor: 'T8_ARMOR_CLOTH_SET1', boots: 'T8_SHOES_PLATE_ROYAL',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Heroic Cleave', 'Iron Will', 'Soulless Stream', null, 'Deep Cuts', '3 Yük biriktir. Görünmezlik(Boots) ile rakip arkasına sız ve tek at.'),
+                swaps: ['T8_MAIN_SWORD']
+            },
+            {
+                role: 'Alan Menzilli Hasarı (Buzul Asası)', difficulty: 'easy',
+                weapon: 'T8_2H_ICEGAUNTLETS_HELL', offhand: null, helmet: 'T8_HEAD_LEATHER_SET1',
+                armor: 'T8_ARMOR_CLOTH_SET2', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_FORTSTERLING', food: 'T8_MEAL_OMELETTE@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Ice Shard', 'Frost Nova', 'Ice Storm', null, 'Aggressive Caster', 'Tankın tuttuğu grubun üzerine yavaşlatıcı kar fırtınası (E) bırak.'),
+                swaps: ['T8_MAIN_FROSTSTAFF_KEEPER']
+            },
+            {
+                role: 'Sürekli Hasar (Ateş Şube)', difficulty: 'easy',
+                weapon: 'T8_2H_FIRESTAFF_HELL', offhand: null, helmet: 'T8_HEAD_CLOTH_SET2',
+                armor: 'T8_ARMOR_CLOTH_SET1', boots: 'T8_SHOES_CLOTH_ROYAL',
+                cape: 'T8_CAPEITEM_FW_FORTSTERLING', food: 'T8_MEAL_STEW@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Fire Bolt', 'Wall of Flames', 'Flame Pillar', null, 'Aggressive Caster', 'Düşman geçişini Ateş Duvarı ile engelle, uzaktan sürekli hasar ver.'),
+                swaps: ['T8_MAIN_FIRESTAFF_KEEPER']
+            },
+            {
+                role: 'Kontrol / Zırh Delici (Gölgegetiren)', difficulty: 'hard',
+                weapon: 'T8_MAIN_CURSEDSTAFF_AVALON', offhand: 'T8_OFF_ORB_MORGANA', helmet: 'T8_HEAD_PLATE_ROYAL',
+                armor: 'T8_ARMOR_CLOTH_皇家', boots: 'T8_SHOES_CLOTH_SET2',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_OMELETTE@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Cursed Sickle', 'Armor Piercer', 'Inner Fire', null, 'Furious', 'Hasarı zırhtan geçiren lanet atışları yap, tanklık yapabilir.'),
+                swaps: ['T8_2H_CURSEDSTAFF_HELL']
+            },
+            {
+                role: 'Grup Şifacısı (Doğa Asası)', difficulty: 'medium',
+                weapon: 'T8_MAIN_NATURESTAFF_KEEPER', offhand: 'T8_OFF_CENSER_AVALON', helmet: 'T8_HEAD_CLOTH_SET1',
+                armor: 'T8_ARMOR_CLOTH_KEEPER', boots: 'T8_SHOES_LEATHER_SET1',
+                cape: 'T8_CAPEITEM_FW_LYMHURST', food: 'T8_MEAL_OMELETTE@1', potion: 'T8_POTION_ENERGY@1',
+                skills: SKILL('Rejuvenation', 'Protection of Nature', 'Well of Life', null, 'Calm', 'Grubun içine girilen ani yüksek hasarları alan yeteneğiyle onar.'),
+                swaps: ['T8_2H_NATURESTAFF_HELL']
+            },
+            {
+                role: 'Bitirici - Yürütücü (Bloodletter)', difficulty: 'hard',
+                weapon: 'T8_MAIN_DAGGER_HELL', offhand: 'T8_OFF_HORN_KEEPER', helmet: 'T8_HEAD_PLATE_UNDEAD',
+                armor: 'T8_ARMOR_LEATHER_SET1', boots: 'T8_SHOES_LEATHER_ROYAL',
+                cape: 'T8_CAPEITEM_FW_MARTLOCK', food: 'T8_MEAL_OMELETTE@1', potion: 'T8_POTION_STONESKIN@1',
+                skills: SKILL('Assassin Spirit', 'Dash', 'Lunging Stabs', null, 'Deep Cuts', '40% Canın altındaki hedefleri tespit et ve anında E ile infaz et.'),
+                swaps: ['T8_2H_DAGGERPAIR']
+            }
         ]
     },
 };
