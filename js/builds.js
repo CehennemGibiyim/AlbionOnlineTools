@@ -767,56 +767,79 @@ function initBuilds() {
 }
 
 function renderBuilds() {
-    const contentType = document.getElementById('builds-content-type')?.value || 'solo_dungeon';
-    const data = BUILDS_DB[contentType];
-    if (!data) return;
+    const type = document.getElementById('builds-content-type').value;
+    const diff = document.querySelector('#builds-difficulty button.active').dataset.val;
+    const container = document.getElementById('builds-grid-container');
+    const infoBox = document.getElementById('builds-content-info');
 
-    // Info box
-    const infoEl = document.getElementById('builds-content-info');
-    if (infoEl) {
-        infoEl.innerHTML = `
-            <div class="content-info-badge">
-                <span class="content-badge-title">${data.title}</span>
-                <span class="content-badge-players">👥 ${data.minPlayers}${data.maxPlayers !== data.minPlayers ? '–' + data.maxPlayers : ''} Kişi</span>
+    if (!container) return;
+    container.innerHTML = '';
+    infoBox.innerHTML = '';
+
+    const buildData = BUILDS_DB[type];
+    if (!buildData) {
+        container.innerHTML = '<div class="empty-state">Bu içerik için henüz dizilim eklenmedi.</div>';
+        return;
+    }
+
+    infoBox.innerHTML = `
+        <div style="background:rgba(255,255,255,0.05); padding:15px; border-radius:8px; border-left:4px solid var(--accent); margin-bottom:20px;">
+            <p style="color:var(--text-muted); font-size:14px; margin:0;">${buildData.description}</p>
+            <div style="margin-top:8px; font-weight:bold; color:var(--accent);">Oyuncu Sayısı: ${buildData.minPlayers} - ${buildData.maxPlayers}</div>
+        </div>
+    `;
+
+    const filtered = buildData.roles.filter(r => diff === 'all' || r.difficulty === diff);
+
+    if (filtered.length === 0) {
+        container.innerHTML = '<div class="empty-state">Seçilen zorlukta rol bulunamadı.</div>';
+        return;
+    }
+
+    const html = filtered.map(r => {
+        return `
+            <div class="build-card">
+                <div class="build-card-header">
+                    <h3 style="margin:0; font-size:16px; color:#fff;">${r.role}</h3>
+                    <div title="Zorluk">${DIFF[r.difficulty]}</div>
+                </div>
+                
+                <div class="build-gear-layout">
+                    <!-- Üst Satır: Pelerin, Başlık, Yemek -->
+                    <div class="gear-row">
+                        ${Q(r.cape)}
+                        ${Q(r.helmet)}
+                        ${Q(r.food)}
+                    </div>
+                    <!-- Orta Satır: Silah, Zırh, Off-hand -->
+                    <div class="gear-row">
+                        ${Q(r.weapon)}
+                        ${Q(r.armor)}
+                        ${Q(r.offhand)}
+                    </div>
+                    <!-- Alt Satır: Boş, Ayakkabı, İksir -->
+                    <div class="gear-row">
+                        <div class="gear-slot empty-gear-slot"></div>
+                        ${Q(r.boots)}
+                        ${Q(r.potion)}
+                    </div>
+                </div>
+
+                <div class="build-swaps">
+                    <span style="font-size:11px; color:var(--text-muted); display:block; margin-bottom:5px;">Alternatif Silahlar(Swaps):</span>
+                    <div style="display:flex; gap:5px; justify-content:center;">
+                        ${(r.swaps || []).map(s => Q(s)).join('') || '<span style="color:#555">Yok</span>'}
+                    </div>
+                </div>
+
+                <div class="build-skills-panel">
+                    ${r.skills || '<span style="color:#555">Skill detayı yok.</span>'}
+                </div>
             </div>
-            <p class="content-info-desc">${data.description}</p>
         `;
-    }
+    }).join('');
 
-    const tbody = document.getElementById('builds-tbody');
-    if (!tbody) return;
-
-    let roles = data.roles;
-    if (currentDiffFilter !== 'all') {
-        roles = roles.filter(r => r.difficulty === currentDiffFilter);
-    }
-
-    tbody.innerHTML = '';
-    roles.forEach(role => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-            <td class="role-name-cell">
-                <div class="role-diff">${DIFF[role.difficulty] || ''}</div>
-                <strong>${role.role}</strong>
-            </td>
-            <td class="gear-cell">${Q(role.weapon)}</td>
-            <td class="gear-cell">${role.offhand ? Q(role.offhand) : '<div class="gear-slot empty-gear-slot">✕</div>'}</td>
-            <td class="gear-cell">${Q(role.helmet)}</td>
-            <td class="gear-cell">${Q(role.armor)}</td>
-            <td class="gear-cell">${Q(role.boots)}</td>
-            <td class="gear-cell">${Q(role.cape)}</td>
-            <td class="gear-cell">${Q(role.food)}</td>
-            <td class="gear-cell">${Q(role.potion)}</td>
-            <td class="skill-cell">${role.skills}</td>
-            <td class="swaps-cell">${(role.swaps || []).map(s => Q(s)).join('')}</td>
-        `;
-        tbody.appendChild(tr);
-    });
-
-    if (roles.length === 0) {
-        tbody.innerHTML = `<tr><td colspan="11"><div class="empty-state"><span>🛡️</span><p>Bu filtre için rol bulunamadı.</p></div></td></tr>`;
-    }
+    container.innerHTML = html;
 }
 
-window.initBuilds = initBuilds;
 window.renderBuilds = renderBuilds;
