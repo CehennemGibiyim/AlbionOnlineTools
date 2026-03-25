@@ -52,6 +52,14 @@
                 <span class="nav-icon">🛡️</span>
                 <span data-i18n="navBuilds">Builds Rehberi</span>
             </button>
+            <button class="nav-tab" data-tab="interactive-map" onclick="switchTab('interactive-map')">
+                <span class="nav-icon">🌍</span>
+                <span data-i18n="navInteractiveMap">İnteraktif Harita</span>
+            </button>
+            <button class="nav-tab" data-tab="premium-tools" onclick="switchTab('premium-tools')">
+                <span class="nav-icon">💎</span>
+                <span data-i18n="navPremiumTools">Premium Araçlar</span>
+            </button>
             <button class="nav-tab" data-tab="settings" onclick="switchTab('settings')">
                 <span class="nav-icon">⚙️</span>
                 <span data-i18n="navSettings">Ayarlar</span>
@@ -465,6 +473,66 @@
         </div>
     </div>
 
+    
+    <!-- ==================== INTERACTIVE MAP TAB ==================== -->
+    <div id="tab-interactive-map" class="tab-content">
+        <div class="generic-panel" style="display:flex; gap:20px; height: 80vh;">
+            <div class="map-sidebar" style="width: 350px; flex-shrink: 0; background: var(--bg-dark); padding: 15px; border-radius: 8px; border: 1px solid var(--border); overflow-y:auto;">
+                <h3 style="margin-top:0; color:var(--accent); border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:10px;">🗺️ Harita Bonusları Görüntüleyici</h3>
+                <p style="font-size:12px; color:var(--text-muted);">Albion2D haritasında incelediğiniz bölgenin ismini yazarak Craft (Üretim) ve Mob Drop bonuslarını buradan görebilirsiniz.</p>
+                
+                <div class="search-box" style="margin: 15px 0;">
+                    <span>🔍</span>
+                    <input type="text" id="map-bonus-search" placeholder="Örn: Lymhurst, Brecilien, Black Zone..." style="width:100%; padding:8px 8px 8px 30px; border-radius:4px; border:1px solid var(--border); background:var(--bg-lighter); color:#fff;">
+                </div>
+                
+                <div id="map-bonus-results" style="margin-top: 15px;">
+                    <div class="empty-state">
+                        <span>📊</span>
+                        <p>Bonusunu görmek istediğiniz bölgeyi aratın.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="map-container" style="flex: 1; border-radius: 8px; overflow:hidden; border: 1px solid var(--border);">
+                <!-- Albion2D sitesi içerik iframe'i -->
+                <iframe src="https://albiononline2d.com/en/map" width="100%" height="100%" frameborder="0" style="background:#000;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== PREMIUM TOOLS TAB ==================== -->
+    <div id="tab-premium-tools" class="tab-content">
+        <div class="generic-panel">
+            <div class="panel-header">
+                <div class="panel-title-group">
+                    <h2 class="panel-title">💎 Premium Araçlar (Ücretsiz)</h2>
+                    <p class="panel-subtitle">YoianAlbion ve diğer platformlardaki premium araçların ücretsiz muadilleri.</p>
+                </div>
+            </div>
+            
+            <div class="builds-grid-container" style="margin-top:20px;">
+                <div class="craft-card" style="align-items:flex-start; text-align:left;">
+                    <h3 style="color:var(--accent); margin:0 0 10px 0;">⚔️ ZvZ Savaş Takibi</h3>
+                    <p style="font-size:13px; color:var(--text-muted);">Büyük çaplı Guild savaşlarındaki (ZvZ) katledilme (Killboard) verilerini analiz edin.</p>
+                    <button class="btn-fetch" style="margin-top:15px; width:100%;">Çok Yakında</button>
+                </div>
+                
+                <div class="craft-card" style="align-items:flex-start; text-align:left;">
+                    <h3 style="color:var(--accent); margin:0 0 10px 0;">🏰 Bölge (Territory) Analizi</h3>
+                    <p style="font-size:13px; color:var(--text-muted);">Hangi guild'in neresi üzerinde kontrolü olduğunu ve saatlik enerji üretimini takip edin.</p>
+                    <button class="btn-fetch" style="margin-top:15px; width:100%;">Çok Yakında</button>
+                </div>
+                
+                <div class="craft-card" style="align-items:flex-start; text-align:left;">
+                    <h3 style="color:var(--accent); margin:0 0 10px 0;">💰 Gelişmiş Ekonomi & Flipping</h3>
+                    <p style="font-size:13px; color:var(--text-muted);">Karaborsa (Black Market) ve Şehirler arası anlık arbitraj kâr marjlarını listeleyin.</p>
+                    <button class="btn-fetch" style="margin-top:15px; width:100%;">Çok Yakında</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="js/api.js" defer></script>
     <script src="js/i18n.js" defer></script>
     <script src="js/settings.js" defer></script>
@@ -485,7 +553,6 @@
     <script src="js/realtime-updates.js" defer></script>
     <script src="js/export-features.js" defer></script>
     <script src="js/pwa-installer.js" defer></script>
-    <script src="js/app.js" defer></script>
-</body>
+    </body>
 
 </html>
