@@ -135,6 +135,66 @@ const AVALON_MAPS = [
     { name: "Aojolos-Asugmlos", tier: "T4", resources: { wood: 0, stone: 0, ore: 1, cotton: 1, hide: 1 }, chests: { sg: 4, sb: 0, mg: 0, mb: 0, by: 0 } },
     { name: "Apalos-Ugumlos", tier: "T8", resources: { wood: 1, stone: 2, ore: 1, cotton: 0, hide: 0 }, chests: { sg: 0, sb: 1, mg: 2, mb: 1, by: 2 } },
     { name: "Arelos-Ailumtos", tier: "T6", resources: { wood: 0, stone: 0, ore: 0, cotton: 1, hide: 2 }, chests: { sg: 2, sb: 0, mg: 1, mb: 2, by: 0 } },
+    { name: "Tortos-Aiagsum", tier: "T4", resources: { wood: 1, stone: 2, ore: 0, cotton: 1, hide: 1 }, chests: { sg: 0, sb: 2, mg: 0, mb: 1, by: 2 } },
+    { name: "Phalos-Ailumtos", tier: "T5", resources: { wood: 2, stone: 2, ore: 2, cotton: 0, hide: 0 }, chests: { sg: 1, sb: 1, mg: 0, mb: 1, by: 1 } },
+    { name: "Nymgos-Avemsum", tier: "T4", resources: { wood: 1, stone: 1, ore: 2, cotton: 0, hide: 0 }, chests: { sg: 1, sb: 0, mg: 2, mb: 1, by: 2 } },
+    { name: "Irazos-Avemsum", tier: "T8", resources: { wood: 2, stone: 0, ore: 1, cotton: 0, hide: 2 }, chests: { sg: 1, sb: 1, mg: 2, mb: 1, by: 0 } },
+    { name: "Wynmos-Ugostas", tier: "T6", resources: { wood: 0, stone: 0, ore: 0, cotton: 2, hide: 0 }, chests: { sg: 0, sb: 2, mg: 2, mb: 1, by: 1 } },
+    { name: "Faebos-Avemsum", tier: "T7", resources: { wood: 0, stone: 1, ore: 1, cotton: 2, hide: 0 }, chests: { sg: 0, sb: 2, mg: 1, mb: 1, by: 2 } },
+    { name: "Faezos-Brinaum", tier: "T5", resources: { wood: 0, stone: 1, ore: 0, cotton: 1, hide: 0 }, chests: { sg: 0, sb: 0, mg: 2, mb: 0, by: 2 } },
+    { name: "Iramos-Atinaum", tier: "T6", resources: { wood: 2, stone: 0, ore: 2, cotton: 2, hide: 0 }, chests: { sg: 1, sb: 0, mg: 0, mb: 2, by: 2 } },
+    { name: "Wyntos-Atinaum", tier: "T5", resources: { wood: 1, stone: 1, ore: 0, cotton: 2, hide: 1 }, chests: { sg: 0, sb: 0, mg: 2, mb: 0, by: 0 } },
+    { name: "Zyrnos-Avemsum", tier: "T4", resources: { wood: 1, stone: 2, ore: 2, cotton: 0, hide: 1 }, chests: { sg: 1, sb: 0, mg: 0, mb: 0, by: 1 } },
+    { name: "Enoros-Avinaum", tier: "T7", resources: { wood: 1, stone: 0, ore: 2, cotton: 0, hide: 2 }, chests: { sg: 0, sb: 1, mg: 0, mb: 2, by: 0 } },
+    { name: "Zyrgos-Atinaum", tier: "T7", resources: { wood: 2, stone: 1, ore: 1, cotton: 0, hide: 1 }, chests: { sg: 2, sb: 0, mg: 1, mb: 1, by: 2 } },
+    { name: "Rhatos-Atinaum", tier: "T6", resources: { wood: 1, stone: 1, ore: 1, cotton: 0, hide: 0 }, chests: { sg: 0, sb: 1, mg: 2, mb: 0, by: 0 } },
+    { name: "Yarlos-Asugmlos", tier: "T8", resources: { wood: 2, stone: 0, ore: 0, cotton: 2, hide: 1 }, chests: { sg: 2, sb: 0, mg: 0, mb: 0, by: 0 } },
+    { name: "Vaetos-Ugumlos", tier: "T4", resources: { wood: 1, stone: 0, ore: 0, cotton: 2, hide: 2 }, chests: { sg: 0, sb: 2, mg: 2, mb: 0, by: 1 } },
+    { name: "Corros-Ugumlos", tier: "T7", resources: { wood: 0, stone: 1, ore: 1, cotton: 1, hide: 2 }, chests: { sg: 0, sb: 0, mg: 2, mb: 0, by: 0 } },
+    { name: "Morgos-Asugmlos", tier: "T7", resources: { wood: 2, stone: 1, ore: 1, cotton: 2, hide: 1 }, chests: { sg: 1, sb: 1, mg: 0, mb: 1, by: 1 } },
+    { name: "Ocazos-Ailumtos", tier: "T4", resources: { wood: 0, stone: 0, ore: 2, cotton: 0, hide: 2 }, chests: { sg: 0, sb: 2, mg: 0, mb: 2, by: 1 } },
+    { name: "Phazos-Aiagsum", tier: "T7", resources: { wood: 0, stone: 2, ore: 0, cotton: 0, hide: 0 }, chests: { sg: 1, sb: 2, mg: 0, mb: 0, by: 1 } },
+    { name: "Gorzos-Atinaum", tier: "T5", resources: { wood: 1, stone: 1, ore: 0, cotton: 1, hide: 0 }, chests: { sg: 2, sb: 1, mg: 0, mb: 0, by: 1 } },
+    { name: "Phamos-Aiagsum", tier: "T6", resources: { wood: 1, stone: 1, ore: 0, cotton: 0, hide: 2 }, chests: { sg: 2, sb: 0, mg: 2, mb: 0, by: 1 } },
+    { name: "Iratos-Atinaum", tier: "T7", resources: { wood: 0, stone: 1, ore: 0, cotton: 0, hide: 0 }, chests: { sg: 2, sb: 2, mg: 2, mb: 1, by: 1 } },
+    { name: "Ocazos-Aiagsum", tier: "T8", resources: { wood: 0, stone: 0, ore: 2, cotton: 0, hide: 2 }, chests: { sg: 2, sb: 2, mg: 2, mb: 2, by: 1 } },
+    { name: "Nymdos-Ailumtos", tier: "T6", resources: { wood: 0, stone: 0, ore: 2, cotton: 2, hide: 0 }, chests: { sg: 1, sb: 0, mg: 2, mb: 1, by: 2 } },
+    { name: "Yarros-Aiagsum", tier: "T5", resources: { wood: 2, stone: 0, ore: 1, cotton: 0, hide: 1 }, chests: { sg: 1, sb: 2, mg: 2, mb: 0, by: 0 } },
+    { name: "Hunbos-Ugostas", tier: "T5", resources: { wood: 1, stone: 1, ore: 0, cotton: 1, hide: 0 }, chests: { sg: 2, sb: 0, mg: 2, mb: 2, by: 0 } },
+    { name: "Drabos-Ainaum", tier: "T7", resources: { wood: 1, stone: 0, ore: 0, cotton: 1, hide: 2 }, chests: { sg: 1, sb: 1, mg: 2, mb: 0, by: 1 } },
+    { name: "Quazos-Ugumlos", tier: "T4", resources: { wood: 0, stone: 1, ore: 2, cotton: 2, hide: 0 }, chests: { sg: 0, sb: 0, mg: 0, mb: 0, by: 2 } },
+    { name: "Iranos-Asugmlos", tier: "T5", resources: { wood: 1, stone: 0, ore: 1, cotton: 2, hide: 0 }, chests: { sg: 2, sb: 2, mg: 0, mb: 1, by: 1 } },
+    { name: "Nymtos-Ugumlos", tier: "T8", resources: { wood: 0, stone: 1, ore: 2, cotton: 1, hide: 0 }, chests: { sg: 0, sb: 2, mg: 1, mb: 0, by: 0 } },
+    { name: "Axabos-Asugmlos", tier: "T7", resources: { wood: 2, stone: 0, ore: 1, cotton: 1, hide: 0 }, chests: { sg: 0, sb: 1, mg: 2, mb: 0, by: 1 } },
+    { name: "Faebos-Asugmlos", tier: "T7", resources: { wood: 1, stone: 2, ore: 1, cotton: 0, hide: 2 }, chests: { sg: 2, sb: 1, mg: 0, mb: 0, by: 2 } },
+    { name: "Uranos-Ainaum", tier: "T6", resources: { wood: 2, stone: 0, ore: 0, cotton: 1, hide: 2 }, chests: { sg: 0, sb: 1, mg: 1, mb: 1, by: 0 } },
+    { name: "Phanos-Atinaum", tier: "T5", resources: { wood: 2, stone: 0, ore: 1, cotton: 0, hide: 2 }, chests: { sg: 0, sb: 0, mg: 1, mb: 1, by: 0 } },
+    { name: "Zyrmos-Ailumtos", tier: "T4", resources: { wood: 2, stone: 0, ore: 1, cotton: 0, hide: 1 }, chests: { sg: 1, sb: 0, mg: 1, mb: 2, by: 1 } },
+    { name: "Bizos-Asugmlos", tier: "T8", resources: { wood: 0, stone: 2, ore: 1, cotton: 1, hide: 1 }, chests: { sg: 2, sb: 1, mg: 2, mb: 0, by: 0 } },
+    { name: "Wyngos-Aiagsum", tier: "T4", resources: { wood: 1, stone: 0, ore: 1, cotton: 2, hide: 0 }, chests: { sg: 1, sb: 0, mg: 2, mb: 2, by: 0 } },
+    { name: "Zyrgos-Ugumlos", tier: "T6", resources: { wood: 2, stone: 0, ore: 1, cotton: 0, hide: 1 }, chests: { sg: 0, sb: 1, mg: 1, mb: 1, by: 2 } },
+    { name: "Xylgos-Ailumtos", tier: "T6", resources: { wood: 2, stone: 2, ore: 0, cotton: 0, hide: 1 }, chests: { sg: 2, sb: 1, mg: 1, mb: 0, by: 0 } },
+    { name: "Vaeros-Asugmlos", tier: "T4", resources: { wood: 1, stone: 0, ore: 2, cotton: 2, hide: 0 }, chests: { sg: 0, sb: 0, mg: 1, mb: 0, by: 1 } },
+    { name: "Ocanos-Ugostas", tier: "T8", resources: { wood: 2, stone: 2, ore: 1, cotton: 1, hide: 1 }, chests: { sg: 2, sb: 0, mg: 1, mb: 1, by: 2 } },
+    { name: "Phazos-Atinaum", tier: "T4", resources: { wood: 1, stone: 2, ore: 2, cotton: 1, hide: 0 }, chests: { sg: 1, sb: 1, mg: 1, mb: 1, by: 0 } },
+    { name: "Zyrnos-Aiagsum", tier: "T8", resources: { wood: 0, stone: 1, ore: 0, cotton: 0, hide: 2 }, chests: { sg: 0, sb: 1, mg: 1, mb: 0, by: 2 } },
+    { name: "Faeros-Ugostas", tier: "T7", resources: { wood: 2, stone: 2, ore: 2, cotton: 1, hide: 0 }, chests: { sg: 1, sb: 0, mg: 2, mb: 0, by: 0 } },
+    { name: "Xylnos-Atinaum", tier: "T7", resources: { wood: 0, stone: 0, ore: 2, cotton: 2, hide: 1 }, chests: { sg: 1, sb: 1, mg: 2, mb: 2, by: 0 } },
+    { name: "Sylros-Ugumlos", tier: "T7", resources: { wood: 1, stone: 0, ore: 2, cotton: 2, hide: 0 }, chests: { sg: 0, sb: 1, mg: 0, mb: 2, by: 0 } },
+    { name: "Uraros-Ainaum", tier: "T7", resources: { wood: 1, stone: 0, ore: 2, cotton: 1, hide: 2 }, chests: { sg: 0, sb: 0, mg: 0, mb: 2, by: 1 } },
+    { name: "Enodos-Atinaum", tier: "T4", resources: { wood: 0, stone: 1, ore: 2, cotton: 2, hide: 2 }, chests: { sg: 0, sb: 2, mg: 2, mb: 1, by: 0 } },
+    { name: "Yarros-Ainaum", tier: "T5", resources: { wood: 1, stone: 0, ore: 2, cotton: 0, hide: 1 }, chests: { sg: 2, sb: 1, mg: 2, mb: 2, by: 0 } },
+    { name: "Enotos-Ailumtos", tier: "T5", resources: { wood: 2, stone: 1, ore: 0, cotton: 1, hide: 1 }, chests: { sg: 1, sb: 0, mg: 2, mb: 2, by: 0 } },
+    { name: "Axazos-Atinaum", tier: "T5", resources: { wood: 1, stone: 0, ore: 1, cotton: 1, hide: 1 }, chests: { sg: 2, sb: 2, mg: 0, mb: 0, by: 2 } },
+    { name: "Ocaros-Asugmlos", tier: "T8", resources: { wood: 0, stone: 2, ore: 0, cotton: 0, hide: 0 }, chests: { sg: 0, sb: 0, mg: 1, mb: 2, by: 0 } },
+    { name: "Axados-Asugmlos", tier: "T6", resources: { wood: 2, stone: 2, ore: 0, cotton: 0, hide: 1 }, chests: { sg: 2, sb: 2, mg: 0, mb: 1, by: 0 } },
+    { name: "Tortos-Atinaum", tier: "T5", resources: { wood: 0, stone: 0, ore: 0, cotton: 2, hide: 2 }, chests: { sg: 1, sb: 1, mg: 2, mb: 0, by: 0 } },
+    { name: "Tormos-Brinaum", tier: "T6", resources: { wood: 1, stone: 1, ore: 1, cotton: 0, hide: 1 }, chests: { sg: 0, sb: 1, mg: 0, mb: 2, by: 2 } },
+    { name: "Gorros-Ainaum", tier: "T5", resources: { wood: 1, stone: 0, ore: 1, cotton: 0, hide: 1 }, chests: { sg: 0, sb: 2, mg: 0, mb: 2, by: 0 } },
+    { name: "Torzos-Avemsum", tier: "T4", resources: { wood: 0, stone: 1, ore: 0, cotton: 1, hide: 2 }, chests: { sg: 2, sb: 0, mg: 1, mb: 1, by: 2 } },
+    { name: "Phalos-Asugmlos", tier: "T4", resources: { wood: 2, stone: 0, ore: 2, cotton: 0, hide: 0 }, chests: { sg: 1, sb: 1, mg: 0, mb: 1, by: 1 } },
+    { name: "Vaetos-Ainaum", tier: "T7", resources: { wood: 0, stone: 0, ore: 0, cotton: 2, hide: 0 }, chests: { sg: 0, sb: 0, mg: 1, mb: 1, by: 1 } },
+    { name: "Syltos-Brinaum", tier: "T5", resources: { wood: 1, stone: 2, ore: 1, cotton: 2, hide: 0 }, chests: { sg: 1, sb: 1, mg: 0, mb: 0, by: 0 } },
 ];
 
 let avalonFiltered = [...AVALON_MAPS];
@@ -236,7 +296,6 @@ function openAvalonModal(mapName) {
     const totalResCount = Object.values(map.resources).reduce((a, b) => a + b, 0);
     const resourceTypes = Object.entries(map.resources).filter(([, v]) => v > 0).length;
 
-    // Determine some logic-based hints
     let hazardLevel = 'Düşük';
     if (map.tier === 'T8') hazardLevel = '💀 Kritik';
     else if (map.tier === 'T7') hazardLevel = '🔴 Yüksek';
@@ -250,19 +309,27 @@ function openAvalonModal(mapName) {
         "🌾 Zengin kaynak çeşitliliği! Toplama araçlarınızın tam olduğundan emin olun." :
         "🎯 Odaklanmış kaynak yapısı. Belirli materyaller için hızlı toplama kampı kurulabilir.";
 
+    const craftBonus = parseInt(map.tier.replace('T', '')) * 5 + 10;
+    const dropBonus = parseInt(map.tier.replace('T', '')) * 25;
+
     body.innerHTML = `
-        <div class="avalon-visual-map">
+        <div class="avalon-real-map" style="text-align:center; margin-bottom:15px; background:#0f1117; border-radius:8px; padding:10px;">
+            <img src="data/maps/${map.name}.png" alt="${map.name} Haritası" style="max-width:100%; border-radius:6px; box-shadow:0 4px 12px rgba(0,0,0,0.5);"
+                 onerror="this.onerror=null; this.parentElement.style.display='none'; document.getElementById('mock-map-${map.name}').style.display='block';">
+        </div>
+
+        <div id="mock-map-${map.name}" class="avalon-visual-map" style="display:none;">
             <div class="map-path" style="width:120px; left:25%; top:30%; transform:rotate(10deg);"></div>
             <div class="map-path" style="width:120px; left:50%; top:50%; transform:rotate(-20deg);"></div>
             <div class="map-path" style="width:80px; left:15%; top:60%; transform:rotate(60deg);"></div>
-            
+
             <div class="avalon-map-node" style="left: 10%; top: 10%;" title="Kuzey Kapısı">🚪</div>
             <div class="avalon-map-node" style="right: 15%; top: 15%;" title="Kaynak Kampı">🪵</div>
             <div class="avalon-map-node" style="left: 45%; top: 45%; background: var(--accent-gold); border-color: #fff;" title="Merkez">📍</div>
             <div class="avalon-map-node" style="left: 20%; bottom: 20%;" title="Solo Zindan">💎</div>
             <div class="avalon-map-node" style="right: 10%; bottom: 30%;" title="Grup Sandığı">🏆</div>
         </div>
-        
+
         <div class="modal-stats-grid">
             <div class="modal-stat">
                 <span class="modal-stat-label">Bölge Seviyesi</span>
@@ -270,11 +337,29 @@ function openAvalonModal(mapName) {
             </div>
             <div class="modal-stat">
                 <span class="modal-stat-label">Tehlike Seviyesi</span>
-                <span class="modal-stat-val" style="color:${hazardLevel.includes('💀') ? '#ff4d4d' : 'inherit'}">${hazardLevel}</span>
+                <span class="modal-stat-val" style="${hazardLevel.includes('💀') ? 'color:#ff4d4d' : ''}">${hazardLevel}</span>
             </div>
             <div class="modal-stat">
                 <span class="modal-stat-label">Toplam Sandık</span>
                 <span class="modal-stat-val">${totalChests}</span>
+            </div>
+        </div>
+
+        <div class="modal-section" style="background: rgba(245, 158, 11, 0.1); border: 1px solid var(--accent); padding: 12px; border-radius: 8px;">
+            <h4 style="color: var(--accent); margin-bottom: 8px;">🌟 Harita & Hideout Bonusları</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 13px;">
+                <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:4px;">
+                    <span>🔨 Craft Bonusu (Üretim)</span><strong style="color:#4ade80">+${craftBonus}%</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:4px;">
+                    <span>⚔️ Mob Drop Bonusu</span><strong style="color:#60a5fa">+${dropBonus}%</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; padding-top:4px;">
+                    <span>🏘️ Hideout (Sığınak)</span><strong style="color:var(--text)">Evet (${map.tier})</strong>
+                </div>
+                <div style="display:flex; justify-content:space-between; padding-top:4px;">
+                    <span>💎 Nadir Eşya Kar Marjı</span><strong style="color:#fbbf24">+${Math.floor(craftBonus/2)}%</strong>
+                </div>
             </div>
         </div>
 

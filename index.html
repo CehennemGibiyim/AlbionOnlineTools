@@ -146,35 +146,41 @@
                     <div class="city-list" id="city-list"></div>
                 </div>
             </aside>
-            <main class="table-container">
-                <table class="craft-table">
-                    <thead>
-                        <tr>
-                            <th data-i18n="colCategory">KATEGORİ</th>
-                            <th data-i18n="colMatUnit">MAT. BİRİM F.</th>
-                            <th data-i18n="colMatCount">MAT. ADET</th>
-                            <th>ARTIFACT</th>
-                            <th data-i18n="colMatCost">MAT. MALİYET</th>
-                            <th data-i18n="colReturn">GETİRİSİ</th>
-                            <th>CRAFT FEE</th>
-                            <th data-i18n="colSellPrice">SATIŞ F.</th>
-                            <th data-i18n="colNetCost">NET MALİYET</th>
-                            <th data-i18n="colNetProfit">NET KAZANÇ</th>
-                            <th data-i18n="colMargin">MARJ%</th>
-                            <th data-i18n="colAmount">ADET</th>
-                        </tr>
-                    </thead>
-                    <tbody id="craft-table-body">
-                        <tr class="empty-state-row">
-                            <td colspan="12">
-                                <div class="empty-state">
-                                    <span>⚙️</span>
-                                    <p data-i18n="loadingDB">Veritabanı yükleniyor...</p>
-                                </div>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <main class="craft-visual-container" id="craft-main-container">
+                <!-- 1. Aşama: Ana Kategoriler -->
+                <div id="craft-step-1" class="craft-step active">
+                    <h2 style="margin-bottom:15px;color:#fff;">Kategori Seçin</h2>
+                    <div id="craft-categories" class="craft-grid"></div>
+                </div>
+                
+                <!-- 2. Aşama: Alt Kategoriler -->
+                <div id="craft-step-2" class="craft-step" style="display:none;">
+                    <div class="craft-step-header">
+                        <button class="btn-back" onclick="craftGoBack(1)">⬅ Geri</button>
+                        <h2 id="craft-sub-title" style="color:#fff;">Alt Kategoriler</h2>
+                    </div>
+                    <div id="craft-subcategories" class="craft-grid"></div>
+                </div>
+
+                <!-- 3. Aşama: Eşya Seçimi -->
+                <div id="craft-step-3" class="craft-step" style="display:none;">
+                    <div class="craft-step-header">
+                        <button class="btn-back" onclick="craftGoBack(2)">⬅ Geri</button>
+                        <h2 id="craft-item-title" style="color:#fff;">Eşya Seçimi</h2>
+                    </div>
+                    <div id="craft-items-list" class="craft-grid"></div>
+                </div>
+
+                <!-- 4. Aşama: Eşya Detayı ve Materyaller (Kar/Zarar) -->
+                <div id="craft-step-4" class="craft-step" style="display:none;">
+                    <div class="craft-step-header">
+                        <button class="btn-back" onclick="craftGoBack(3)">⬅ Geri</button>
+                        <h2 id="craft-detail-title" style="color:#fff;">Eşya Detayları</h2>
+                    </div>
+                    <div id="craft-detail-content" class="craft-detail-panel">
+                        <!-- JS ile Eşya resmi, statları, craft materyalleri ve sonuç bölümü buraya basılacak. -->
+                    </div>
+                </div>
             </main>
         </div>
         <footer class="bottom-summary">
@@ -374,24 +380,9 @@
             </div>
             <div class="builds-content-info" id="builds-content-info"></div>
             <div class="builds-table-wrap">
-                <table class="craft-table builds-table">
-                    <thead>
-                        <tr>
-                            <th class="role-col">ROL</th>
-                            <th>SİLAH</th>
-                            <th>OFF HAND</th>
-                            <th>BAŞLIK</th>
-                            <th>ZIRH</th>
-                            <th>BOT</th>
-                            <th>PELERIN</th>
-                            <th>YİYECEK</th>
-                            <th>İKSİR</th>
-                            <th class="skill-col">SKİLL ROTASYONU</th>
-                            <th>SWAPS</th>
-                        </tr>
-                    </thead>
-                    <tbody id="builds-tbody"></tbody>
-                </table>
+                <div id="builds-grid-container" class="builds-grid-container">
+                    <!-- Javascript ile takım/rol bazlı görsel eşya listesi basılacak -->
+                </div>
             </div>
             <div class="builds-legend">
                 <span><span class="dot-green">●</span> Kolay</span>
@@ -479,8 +470,9 @@
     <script src="js/settings.js" defer></script>
     <script src="js/avalon.js" defer></script>
     <script src="js/market-class.js" defer></script>
-
     <script src="js/builds.js" defer></script>
+    <script src="js/app.js" defer></script>
+    <script src="js/craft-ui.js" defer></script>
     <script src="js/app-fixes.js" defer></script>
     <script src="js/advanced-filters.js" defer></script>
     <script src="js/guild-wars.js" defer></script>
